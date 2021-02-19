@@ -1,0 +1,58 @@
+﻿/* CSS RESET STYLE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* CLEARFIX HACK */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+#container {
+	width: 100vw;
+	height: 100vh;
+	background-color: orange;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.background {
+	background-image: url(Resources/PngItem_528245.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-color: red;
+	position: absolute;
+	z-index: 1;
+}
+
+.content {
+	min-width: 1000px;
+	min-height: 643px;
+}
+
+
+
+/* Extra small devices (phones, 320px and down) */
+@media only screen and (max-width: 320px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
