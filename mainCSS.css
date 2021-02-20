@@ -46,6 +46,19 @@
 	
 }
 
+.pages {
+	/*original 344w x 84h	*/
+	background-image: url(Resources/masking-tape-1v2.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	z-index: 3;
+	position: absolute;
+	right: 7%;
+	top: 9%;
+	transform: rotate(-10deg) skewY(15deg)
+}
+
+
 .under-dev {
 	display: none;
 	color: orange;
@@ -125,6 +138,10 @@
 		width: 1488px;
 		height: 957px;
 	}
+	.pages {
+		width: 160px;
+		height: 39px;
+	}
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -137,5 +154,12 @@
 		width: 1488px;
 		height: 1100px;
 	}	
+	.pages {
+		right: 9%;
+		top: 10%;
+	}
 
 }
+
+
+/*images do not load if <img> tag is used for local files; opted for background-image */
