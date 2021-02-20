@@ -1,5 +1,10 @@
-PngItem_528245
+background-img
 	Source: https://www.pngitem.com/middle/TJbomh_clip-art-old-tv-png-old-tv-png/
 	Contributor: Provinciamantovana
+	Image License: Personal Use Only
+
+masking-tape
+	Source: https://www.vhv.rs/viewpic/hTbiRbi_masking-tape-transparent-png-png-download/
+	Contributor: Not shown
 	Image License: Personal Use Only
 	
