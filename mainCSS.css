@@ -57,6 +57,16 @@
 	top: 10%;
 	transform: rotate(-10deg) skewY(15deg);	
 }
+.projects {
+/*	original 208w x 85h*/
+	background-image: url(Resources/masking-tape-2.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	z-index: 3;
+	position: absolute;
+	right: 8%;
+	top: 29.5%;	
+}
 
 
 .under-dev {
@@ -169,6 +179,10 @@
 	.pages {
 		width: 160px;
 		height: 39px;	
+	}
+	.projects{
+		width: 150px;
+		height: 61px;
 	}
 }
 
