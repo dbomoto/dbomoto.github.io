@@ -46,6 +46,7 @@
 	
 }
 
+/*used aspect-ratio sizing to adjust width and height for different media queries*/
 .pages {
 	/*original 344w x 84h	*/
 	background-image: url(Resources/masking-tape-1v2.png);
@@ -65,7 +66,7 @@
 	z-index: 3;
 	position: absolute;
 	right: 8%;
-	top: 29.5%;	
+	top: 29%;	
 }
 
 
@@ -93,7 +94,7 @@
 }
 */
 
-/*320px and up*/
+
 @media only screen and (max-width: 320px) {
 	.under-dev {
 		display: block;
@@ -102,6 +103,8 @@
 		display: none;
 	}
 }
+
+/*320px and up*/
 @media only screen and (min-width: 320px) {
 	.background {
 		width: 300px;
@@ -112,8 +115,13 @@
 		height: 309px;
 	}
 	.pages {
-		width: 42px;
+		width: 40px;
 		height: 10px;
+	}	
+	.projects{
+		width: 36px;
+		height: 15px;
+		top: 29.5%;
 	}		
 }
 
@@ -131,7 +139,11 @@
 	.pages {
 		width: 79px;
 		height: 19px;
-	}	
+	}
+	.projects{
+		width: 74px;
+		height: 30px;
+	}		
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -147,6 +159,10 @@
 	.pages {
 		width: 100px;
 		height: 24px;
+	}
+	.projects{
+		width: 95px;
+		height: 39px;
 	}	
 }
 
@@ -164,6 +180,10 @@
 		width: 130px;
 		height: 32px;
 	}
+	.projects{
+		width: 125px;
+		height: 51px;
+	}	
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
