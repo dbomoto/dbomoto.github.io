@@ -34,7 +34,7 @@
 	background-repeat: no-repeat, no-repeat;
 	background-size: 100% 100%, 100% 100%;
 	z-index: 2;
-	position: absolute;
+	position: relative;
 }
 
 .white-light {
@@ -69,6 +69,17 @@
 	top: 29%;	
 }
 
+.knob-1 {
+/*	original 86w x 87h*/
+	background-image: url(Resources/knob-1.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	z-index: 3;
+	position: absolute;
+	right: 12%;
+/*	9.5%*/
+	top: 15%;
+}
 
 .under-dev {
 	display: none;
@@ -203,6 +214,10 @@
 	.projects{
 		width: 150px;
 		height: 61px;
+	}
+	.knob-1 {
+		width: 105px;
+		height: 106px;
 	}
 }
 
