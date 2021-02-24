@@ -30,6 +30,7 @@
 .background {
 	/*image is 14:9 aspect ratio*/
 	/*default image width 1000px and height 643px	*/	
+	/*used aspect-ratio sizing to adjust width and height for different media queries*/	
 	background-image: url(/Resources/background-img.png);
 	background-repeat: no-repeat, no-repeat;
 	background-size: 100% 100%, 100% 100%;
@@ -71,13 +72,12 @@
 
 .knob-1 {
 /*	original 86w x 87h*/
-	background-image: url(Resources/knob-1.png);
+	background-image: url(Resources/knob-1v2.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	z-index: 3;
 	position: absolute;
-	right: 12%;
-/*	9.5%*/
+	right: 9.5%;
 	top: 15%;
 }
 
@@ -133,6 +133,10 @@
 		width: 36px;
 		height: 15px;
 		top: 29.5%;
+	}	
+	.knob-1 {
+		width: 25px;
+		height: 26px;
 	}		
 }
 
@@ -154,6 +158,10 @@
 	.projects{
 		width: 74px;
 		height: 30px;
+	}	
+	.knob-1 {
+		width: 52px;
+		height: 53px;
 	}		
 }
 
@@ -174,7 +182,11 @@
 	.projects{
 		width: 95px;
 		height: 39px;
-	}	
+	}
+	.knob-1 {
+		width: 65px;
+		height: 66px;
+	}		
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -194,6 +206,10 @@
 	.projects{
 		width: 125px;
 		height: 51px;
+	}	
+	.knob-1 {
+		width: 86px;
+		height: 87px;
 	}	
 }
 

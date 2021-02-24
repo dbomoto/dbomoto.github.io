@@ -1,8 +1,8 @@
 ﻿/*eslint-env es6*/
 /*eslint-env browser*/
+window.onload = function(){
 var knob1 = document.getElementsByClassName('knob-1')[0];
 var knob1Counter = 0;
-window.alert(knob1);
 
 function knobRotate() {
 	knob1Counter += 45;
@@ -13,3 +13,5 @@ function knobRotate() {
 }
 
 knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)})
+	
+}
