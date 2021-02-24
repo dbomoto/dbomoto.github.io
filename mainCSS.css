@@ -80,6 +80,16 @@
 	right: 9.5%;
 	top: 15%;
 }
+.knob-2 {
+/*	original 86w x 87h*/
+	background-image: url(Resources/knob-2v2.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	z-index: 3;
+	position: absolute;
+	right: 9.7%;
+	top: 37%;
+}
 
 .under-dev {
 	display: none;
@@ -137,6 +147,12 @@
 	.knob-1 {
 		width: 25px;
 		height: 26px;
+		top: 15.2%;
+	}	
+	.knob-2 {
+		width: 26px;
+		height: 23px;
+		top: 37.9%;
 	}		
 }
 
@@ -162,7 +178,13 @@
 	.knob-1 {
 		width: 52px;
 		height: 53px;
-	}		
+		top: 15%;
+	}	
+	.knob-2 {
+		width: 53px;
+		height: 50px;
+		top: 37%;
+	}	
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -186,7 +208,11 @@
 	.knob-1 {
 		width: 65px;
 		height: 66px;
-	}		
+	}
+	.knob-2 {
+		width: 66px;
+		height: 63px;
+	}	
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -210,6 +236,10 @@
 	.knob-1 {
 		width: 86px;
 		height: 87px;
+	}	
+	.knob-2 {
+		width: 87px;
+		height: 84px;
 	}	
 }
 
@@ -235,6 +265,10 @@
 		width: 105px;
 		height: 106px;
 	}
+	.knob-2 {
+		width: 106px;
+		height: 103px;
+	}	
 }
 
 
