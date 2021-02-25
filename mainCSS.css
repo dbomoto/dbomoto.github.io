@@ -34,6 +34,7 @@
 	background-image: url(/Resources/background-img.png);
 	background-repeat: no-repeat, no-repeat;
 	background-size: 100% 100%, 100% 100%;
+/*	background-color: red;*/
 	z-index: 2;
 	position: relative;
 }
@@ -43,7 +44,7 @@
 	background-color: white;
 	background-blend-mode: hard-light;
 	position: absolute;
-	z-index: 1;
+	z-index: 0;
 	
 }
 
@@ -53,7 +54,7 @@
 	background-image: url(Resources/masking-tape-1v2.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	z-index: 3;
+/*	z-index: 3;*/
 	position: absolute;
 	right: 7%;
 	top: 10%;
@@ -64,7 +65,7 @@
 	background-image: url(Resources/masking-tape-2.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	z-index: 3;
+/*	z-index: 3;*/
 	position: absolute;
 	right: 8%;
 	top: 29%;	
@@ -75,7 +76,7 @@
 	background-image: url(Resources/knob-1v2.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	z-index: 3;
+/*	z-index: 3;*/
 	position: absolute;
 	right: 9.5%;
 	top: 15%;
@@ -85,10 +86,40 @@
 	background-image: url(Resources/knob-2v2.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	z-index: 3;
+/*	z-index: 3;*/
 	position: absolute;
 	right: 9.7%;
 	top: 37%;
+}
+
+/*container is used to display as flex and have items follow the same path as background class*/
+.crt-container {
+	background-color: orange;
+	position: absolute;
+	z-index: 1;
+	width: 100vw;
+	height: 771px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.follow-background {
+	background-color: red;
+/*	set width and height equal to background class*/
+	width: 1200px;
+	height: 771px;
+	position: relative;
+}
+
+/*content that can be seen inside the CRT*/
+.about {
+	background-color: green;
+	width: 675px;
+	height: 525px;
+	position: absolute;
+	left: 11%;
+	top: 8%;
 }
 
 .under-dev {
@@ -268,8 +299,10 @@
 	.knob-2 {
 		width: 106px;
 		height: 103px;
-	}	
+	}
 }
+
+/*additional media queries for landscapes and others dimension of client*/
 
 
 /*images do not load if <img> tag is used for local files; opted for background-image */
