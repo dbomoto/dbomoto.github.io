@@ -14,6 +14,9 @@
   display: table;
 }
 
+body {
+	font-size: 16px;
+}
 
 #container {
 	width: 100vw;
@@ -40,11 +43,6 @@
 }
 
 .white-light {
-	background-image: radial-gradient(closest-side at 44% 46%, white,gray, black);
-	background-color: white;
-	background-blend-mode: hard-light;
-	position: absolute;
-	z-index: 0;
 	
 }
 
@@ -94,7 +92,7 @@
 
 /*container is used to display as flex and have items follow the same path as background class*/
 .crt-container {
-	background-color: orange;
+/*	background-color: orange;*/
 	position: absolute;
 	z-index: 1;
 	width: 100vw;
@@ -104,19 +102,19 @@
 	justify-content: center;
 	align-items: center;
 }
+
+
 .follow-background {
-	background-color: red;
+/*	background-color: red;*/
 /*	set width and height equal to background class*/
-	width: 1200px;
-	height: 771px;
 	position: relative;
 }
 
 /*content that can be seen inside the CRT*/
+/*set the font-size to adjust accoring to the width of.....*/
+/*or scale content on each query*/
 .about {
 	background-color: green;
-	width: 675px;
-	height: 525px;
 	position: absolute;
 	left: 11%;
 	top: 8%;
@@ -158,14 +156,11 @@
 
 /*320px and up*/
 @media only screen and (min-width: 320px) {
-	.background {
+	.background,.follow-background  {
 		width: 300px;
 		height: 206px;		
 	}
-	.white-light {
-		width: 450px;
-		height: 309px;
-	}
+
 	.pages {
 		width: 40px;
 		height: 10px;
@@ -184,19 +179,19 @@
 		width: 26px;
 		height: 23px;
 		top: 37.9%;
-	}		
+	}	
+	.about {
+		width: 171px;
+		height: 140px;
+	}	
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 /*maybe change the image for background from here downwards*/
 @media only screen and (min-width: 600px) {
-	.background {
+	.background,.follow-background  {
 		width: 600px;
 		height: 386px;		
-	}
-	.white-light {
-		width: 900px;
-		height: 579px;
 	}
 	.pages {
 		width: 79px;
@@ -215,19 +210,20 @@
 		width: 53px;
 		height: 50px;
 		top: 37%;
+	}
+	.about {
+		width: 337px;
+		height: 262px;
 	}	
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-	.background {
+	.background,.follow-background  {
 		width: 768px;
 		height: 494px;		
 	}	
-	.white-light {
-		width: 1152px;
-		height: 741px;
-	}
+
 	.pages {
 		width: 100px;
 		height: 24px;
@@ -243,19 +239,20 @@
 	.knob-2 {
 		width: 66px;
 		height: 63px;
-	}	
+	}
+	.about {
+		width: 431px;
+		height: 335px;
+	}		
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-	.background{
+	.background,.follow-background {
 		width: 992px;
 		height: 638px;		
 	}	
-	.white-light {
-		width: 1488px;
-		height: 957px;
-	}
+
 	.pages {
 		width: 130px;
 		height: 32px;
@@ -272,18 +269,20 @@
 		width: 87px;
 		height: 84px;
 	}	
+	.about {
+		width: 556px;
+		height: 432px;
+	}	
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-	.background {
+/*dont set background to min-width to allow spacing when mobile phones are in landscape*/
+	.background,.follow-background {
 		width: 1200px;
 		height: 771px;		
 	}
-	.white-light {
-		width: 1488px;
-		height: 1100px;
-	}
+
 	.pages {
 		width: 160px;
 		height: 39px;	
@@ -299,6 +298,10 @@
 	.knob-2 {
 		width: 106px;
 		height: 103px;
+	}
+	.about {
+		width: 675px;
+		height: 525px;
 	}
 }
 
