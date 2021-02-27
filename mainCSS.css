@@ -119,6 +119,28 @@ body {
 	left: 11%;
 	top: 8%;
 }
+.skills {
+	background-color: red;
+	position: absolute;
+	left: 11%;
+	top: 8%;
+}
+.certificates {
+	background-color: orange;
+	position: absolute;
+	left: 11%;
+	top: 8%;
+}
+.contact {
+	background-color: blue;
+	position: absolute;
+	left: 11%;
+	top: 8%;
+}
+
+.hide {
+	display: none;
+}
 
 .under-dev {
 	display: none;
@@ -180,7 +202,7 @@ body {
 		height: 23px;
 		top: 37.9%;
 	}	
-	.about {
+	.about,.skills,.certificates,.contact {
 		width: 171px;
 		height: 140px;
 	}	
@@ -211,7 +233,7 @@ body {
 		height: 50px;
 		top: 37%;
 	}
-	.about {
+	.about,.skills,.certificates,.contact {
 		width: 337px;
 		height: 262px;
 	}	
@@ -240,7 +262,7 @@ body {
 		width: 66px;
 		height: 63px;
 	}
-	.about {
+	.about,.skills,.certificates,.contact {
 		width: 431px;
 		height: 335px;
 	}		
@@ -269,7 +291,7 @@ body {
 		width: 87px;
 		height: 84px;
 	}	
-	.about {
+	.about,.skills,.certificates,.contact {
 		width: 556px;
 		height: 432px;
 	}	
@@ -299,7 +321,7 @@ body {
 		width: 106px;
 		height: 103px;
 	}
-	.about {
+	.about,.skills,.certificates,.contact {
 		width: 675px;
 		height: 525px;
 	}
