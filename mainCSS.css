@@ -137,6 +137,20 @@ body {
 	left: 11%;
 	top: 8%;
 }
+.project1,.project2,.project3,.project4 {
+/*	background-color: white;*/
+	position: absolute;
+	left: 11%;
+	top: 8%;	
+}
+
+/*testing purposes*/
+h1 {
+	position: relative;
+	color: aqua;
+	top: 50%;
+	left: 50%;
+}
 
 .hide {
 	display: none;
@@ -321,7 +335,7 @@ body {
 		width: 106px;
 		height: 103px;
 	}
-	.about,.skills,.certificates,.contact {
+	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4 {
 		width: 675px;
 		height: 525px;
 	}

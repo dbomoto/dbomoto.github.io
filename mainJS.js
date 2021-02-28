@@ -28,24 +28,62 @@ function knobRotate2() {
 }
 knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})	
 	
-/*changes the display in the crt as Pages knob is clicked*/	
+
+	
 var crtPages = document.getElementsByClassName('crt-pages');
+var crtProjects = document.getElementsByClassName('crt-projects');
+/*changes the display in the crt as Pages/Projects knob is clicked*/		
 function crtPagesToggle() {
 	let toShow=0;
+	for(let x of crtProjects){
+		if(!x.classList.contains('hide')){
+			x.classList.toggle('hide')
+		}
+	}	
 	for(let x = 0; x <= crtPages.length-1; x++){
 		if (!crtPages[x].classList.contains('hide')){
 			toShow = x;
+			x = crtPages.length;
+		} else {
+			toShow = -1;
 		}
 	}
-	if (toShow == crtPages.length-1) {
-		crtPages[toShow].classList.toggle('hide');
+	if (toShow == -1) {
 		crtPages[0].classList.toggle('hide');
-	} else {
+	}else if(toShow == crtProjects.length-1) {
 		crtPages[toShow].classList.toggle('hide');
-		crtPages[toShow + 1].classList.toggle('hide');		
+		crtPages[0].classList.toggle('hide');		
+	}else {
+		crtPages[toShow].classList.toggle('hide');
+		crtPages[toShow + 1].classList.toggle('hide');	
 	}
-}
+}	
+function crtProjectsToggle() {
+	let toShow=0;
+	for(let x of crtPages){
+		if(!x.classList.contains('hide')){
+			x.classList.toggle('hide')
+		}
+	}	
+	for(let x = 0; x <= crtProjects.length-1; x++){
+		if (!crtProjects[x].classList.contains('hide')){
+			toShow = x;
+			x = crtProjects.length;
+		} else {
+			toShow = -1;
+		}
+	}
+	if (toShow == -1) {
+		crtProjects[0].classList.toggle('hide');
+	}else if(toShow == crtProjects.length-1) {
+		crtProjects[toShow].classList.toggle('hide');
+		crtProjects[0].classList.toggle('hide');		
+	}else {
+		crtProjects[toShow].classList.toggle('hide');
+		crtProjects[toShow + 1].classList.toggle('hide');	
+	}
+}	
 knob1.addEventListener('click', crtPagesToggle);
-
+knob2.addEventListener('click', crtProjectsToggle);
 	
 }
