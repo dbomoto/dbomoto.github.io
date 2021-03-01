@@ -42,9 +42,11 @@ body {
 	position: relative;
 }
 
+/*
 .white-light {
 	
 }
+*/
 
 /*used aspect-ratio sizing to adjust width and height for different media queries*/
 .pages {
@@ -143,14 +145,27 @@ body {
 	left: 11%;
 	top: 8%;	
 }
+/*sets the padding of the crt to display content in the middle*/
+.crt-projects,.crt-pages {
+	padding: 4%;
+}
+h1{
+/*	background-color: greenyellow;*/
+	height: 100%;
+	text-align: center;
+	font-size: 2em;
+	color: lawngreen;
+}
 
-/*testing purposes*/
+/*testing purposes */
+/*
 h1 {
 	position: relative;
 	color: aqua;
 	top: 50%;
 	left: 50%;
 }
+*/
 
 .hide {
 	display: none;
