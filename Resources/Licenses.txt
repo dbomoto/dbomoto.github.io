@@ -7,4 +7,28 @@ masking-tape
 	Source: https://www.vhv.rs/viewpic/hTbiRbi_masking-tape-transparent-png-png-download/
 	Contributor: Not shown
 	Image License: Personal Use Only
+
+crt-background
+	Source: https://wallpaperaccess.com/pip-boy
+	Download-source: https://wallpaperaccess.com/download/pip-boy-312303
+	Contributor: Not shown
+	Image License: Based on site FAQ
+
+		Can I use a wallpaper on my website? For my YouTube channel? For a t-shirt?
+
+		The wallpapers are for personal use only. Personal use means that they are 
+		not to be used for any commercial purposes where you may charge money, collect 
+		fees, or receive any kind of payment. These background images may not be used 
+		on any website where they could generate revenue, and they cannot be used in 
+		advertisements. The images may not be resold, relicensed or sublicensed.
+
+mixkit-static-of-a-television-4307
+	Source: https://mixkit.co/free-stock-video/static-of-a-television-4307/
+	Contributor: https://mixkit.co/@dubassy/
+	Video License: 
+***************************************************************************************
+Items under the Mixkit Stock Video Free License can be used in your commercial and non-commercial projects, for free.
+
+You’re permitted to download, copy, modify, distribute, publicly perform and broadcast the Items. Your rights are non-exclusive, worldwide, sub-licensable and ongoing. Attribution is not required, however, we would appreciate it if you credit Mixkit where reasonably possible.
+**********************************************************************************************
 	
