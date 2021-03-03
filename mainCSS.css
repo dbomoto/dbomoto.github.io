@@ -134,6 +134,38 @@ body {
 	left: 11%;
 	top: 8%;	
 }
+.animation-container1 {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	position: relative;	
+/*	temporary background color, for tracing only*/
+	background-color: red;
+
+}
+.initial-animation {
+	background-color: white;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+/*
+	sets the location of the div, while the containers flex center's it, when width and height changes via javascript it will give the illusion of expanding on both sides	
+*/
+	position: relative;
+	left: -10.5%;
+	top: -8%;	
+/*
+	width and height are temporary, still for testing.
+	div current follows the crt dimension without any further 
+	edits on media queries.
+*/
+/*
+	width: 2%;
+	height: 5%;	
+*/
+}
 /*sets the padding of the crt to display content in the middle*/
 .crt-projects,.crt-pages {
 	padding: 4%;
@@ -302,7 +334,7 @@ h1{
 	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4 {
 		width: 556px;
 		height: 432px;
-	}	
+	}
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -329,7 +361,7 @@ h1{
 		width: 106px;
 		height: 103px;
 	}
-	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4 {
+	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4, {
 		width: 675px;
 		height: 525px;
 	}

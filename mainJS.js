@@ -1,6 +1,36 @@
 ﻿/*eslint-env es6*/
 /*eslint-env browser*/
 window.onload = function(){
+var initialAnimation = document.getElementsByClassName('initial-animation')[0];
+var animateWidth = 0;
+var animateHeight = 0;
+	
+function opening(time){
+	animateWidth += 0.5;
+	animateHeight += 0.5;
+	if (animateHeight > 5){
+		animateHeight = 5;
+	}
+	if (animateWidth > 2){
+		animateWidth = 2;
+	}
+	initialAnimation.style.width = `${animateWidth}%`;
+	initialAnimation.style.height = `${animateHeight}%`;
+	if ((animateHeight == 5) && (animateWidth == 2)) {
+		initialAnimation.classList.toggle('hide');
+		document.getElementsByClassName('about')[0].classList.toggle('hide');		
+	}else if ((animateWidth < 2) || (animateHeight < 5)){
+//		alert(`${animateWidth}% ${animateHeight}%`)
+		window.requestAnimationFrame(opening);
+	}
+}
+
+function openingPart2(){
+	animateWidth += 0.5;
+	animateHeight += 0.5;	
+}
+	
+window.requestAnimationFrame(opening);
 	
 /*animation for knob-1*/
 var knob1 = document.getElementsByClassName('knob-1')[0];
