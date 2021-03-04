@@ -17,18 +17,50 @@ function opening(time){
 	initialAnimation.style.width = `${animateWidth}%`;
 	initialAnimation.style.height = `${animateHeight}%`;
 	if ((animateHeight == 5) && (animateWidth == 2)) {
-		initialAnimation.classList.toggle('hide');
-		document.getElementsByClassName('about')[0].classList.toggle('hide');		
+		openingPart2();
 	}else if ((animateWidth < 2) || (animateHeight < 5)){
-//		alert(`${animateWidth}% ${animateHeight}%`)
 		window.requestAnimationFrame(opening);
 	}
 }
 
 function openingPart2(){
-	animateWidth += 0.5;
-	animateHeight += 0.5;	
+	animateWidth += 3;
+	animateHeight -= 0.2;	
+	if (animateHeight < 1){
+		animateHeight = 1;
+	}
+	if (animateWidth > 60){
+		animateWidth = 60;
+	}
+	initialAnimation.style.width = `${animateWidth}%`;
+	initialAnimation.style.height = `${animateHeight}%`;
+	if ((animateHeight == 1) && (animateWidth == 60)) {
+		openingPart3();
+	}else if ((animateWidth < 60) || (animateHeight > 1)){
+		window.requestAnimationFrame(openingPart2);
+	}	
 }
+	
+function openingPart3(){
+	animateHeight += 5;	
+	if (animateHeight > 70){
+		animateHeight = 70;
+	}
+	initialAnimation.style.height = `${animateHeight}%`;
+	if (animateHeight == 70) {
+		initialAnimation.classList.toggle('hide');
+		let vidStatic = document.getElementById('static-vid');
+		vidStatic.classList.toggle('hide');
+		vidStatic.play();
+/* video not currently working, use GIF? */		
+	}else if (animateHeight < 70){
+		window.requestAnimationFrame(openingPart3);
+	}		
+}	
+/*
+		initialAnimation.classList.toggle('hide');
+		document.getElementsByClassName('about')[0].classList.toggle('hide');	
+*/
 	
 window.requestAnimationFrame(opening);
 	

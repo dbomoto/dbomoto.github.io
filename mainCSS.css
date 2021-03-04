@@ -134,6 +134,11 @@ body {
 	left: 11%;
 	top: 8%;	
 }
+.static-vid {		
+	position: absolute;
+	left: 11%;
+	top: 8%;		
+}
 .animation-container1 {
 	display: flex;
 	flex-direction: row;
@@ -361,9 +366,16 @@ h1{
 		width: 106px;
 		height: 103px;
 	}
-	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4, {
+	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4 {
 		width: 675px;
 		height: 525px;
+	}
+	.static-vid {
+/*
+		width: 675px;
+		height: 525px;		
+*/
+		width: 1000px;
 	}
 }
 
