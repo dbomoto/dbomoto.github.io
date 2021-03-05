@@ -4,7 +4,16 @@ window.onload = function(){
 var initialAnimation = document.getElementsByClassName('initial-animation')[0];
 var animateWidth = 0;
 var animateHeight = 0;
-	
+var vidStatic = document.getElementsByClassName('static-gif')[0];
+var vidStaticSource = [
+	"https://giphy.com/embed/l41K3o5TzvmhZwd4A",
+	"https://giphy.com/embed/3o6vXRxrhj7Ov94Gbu",
+	"https://giphy.com/embed/riw3K0D2h4klG",
+	"https://giphy.com/embed/KYOD96tSm8Ovm",
+	"https://giphy.com/embed/cIzTaqISogDFS",
+	"https://giphy.com/embed/14b7jOY6PdD3lC"
+];
+
 function opening(time){
 	animateWidth += 0.5;
 	animateHeight += 0.5;
@@ -48,11 +57,12 @@ function openingPart3(){
 	}
 	initialAnimation.style.height = `${animateHeight}%`;
 	if (animateHeight == 70) {
-		initialAnimation.classList.toggle('hide');
-		let vidStatic = document.getElementById('static-vid');
 		vidStatic.classList.toggle('hide');
-		vidStatic.play();
-/* video not currently working, use GIF? */		
+		initialAnimation.classList.toggle('hide');
+		setTimeout(function(){
+			document.getElementsByClassName('about')[0].classList.toggle('hide');
+			vidStatic.classList.toggle('hide');
+		}, 600)	
 	}else if (animateHeight < 70){
 		window.requestAnimationFrame(openingPart3);
 	}		
