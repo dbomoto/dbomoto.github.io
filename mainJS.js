@@ -13,7 +13,14 @@ var vidStaticSource = [
 	"https://giphy.com/embed/cIzTaqISogDFS",
 	"https://giphy.com/embed/14b7jOY6PdD3lC"
 ];
+	
+function randomStatic(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
+/*one shot, only during the opening of the website*/	
+document.getElementsByClassName('static-iframe')[0].getAttributeNode('src').value = vidStaticSource[randomStatic(0,5)];
+	
 function opening(time){
 	animateWidth += 0.5;
 	animateHeight += 0.5;
@@ -57,6 +64,7 @@ function openingPart3(){
 	}
 	initialAnimation.style.height = `${animateHeight}%`;
 	if (animateHeight == 70) {
+
 		vidStatic.classList.toggle('hide');
 		initialAnimation.classList.toggle('hide');
 		setTimeout(function(){
@@ -67,10 +75,6 @@ function openingPart3(){
 		window.requestAnimationFrame(openingPart3);
 	}		
 }	
-/*
-		initialAnimation.classList.toggle('hide');
-		document.getElementsByClassName('about')[0].classList.toggle('hide');	
-*/
 	
 window.requestAnimationFrame(opening);
 	
