@@ -19,7 +19,8 @@ function randomStatic(min, max) { // min and max included
 }
 
 /*one shot, only during the opening of the website*/	
-document.getElementsByClassName('static-iframe')[0].getAttributeNode('src').value = vidStaticSource[randomStatic(0,5)];
+var staticIframe = document.getElementsByClassName('static-iframe')[0].getAttributeNode('src'); 
+staticIframe.value = vidStaticSource[randomStatic(0,5)];
 	
 function opening(time){
 	animateWidth += 0.5;
@@ -128,10 +129,22 @@ function crtPagesToggle() {
 		crtPages[0].classList.toggle('hide');
 	}else if(toShow == crtProjects.length-1) {
 		crtPages[toShow].classList.toggle('hide');
-		crtPages[0].classList.toggle('hide');		
+		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		vidStatic.classList.toggle('hide');
+		setTimeout(function(){
+		vidStatic.classList.toggle('hide');			
+		crtPages[0].classList.toggle('hide');
+		},200);
+					
 	}else {
 		crtPages[toShow].classList.toggle('hide');
-		crtPages[toShow + 1].classList.toggle('hide');	
+		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		vidStatic.classList.toggle('hide');
+		setTimeout(function(){
+		vidStatic.classList.toggle('hide');		
+		crtPages[toShow + 1].classList.toggle('hide');			
+		},200)
+
 	}
 }	
 function crtProjectsToggle() {
