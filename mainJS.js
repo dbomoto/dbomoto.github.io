@@ -126,7 +126,12 @@ function crtPagesToggle() {
 		}
 	}
 	if (toShow == -1) {
+		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		vidStatic.classList.toggle('hide');		
+		setTimeout(function(){
+		vidStatic.classList.toggle('hide');			
 		crtPages[0].classList.toggle('hide');
+		},200);		
 	}else if(toShow == crtProjects.length-1) {
 		crtPages[toShow].classList.toggle('hide');
 		staticIframe.value = vidStaticSource[randomStatic(0,5)];
@@ -163,13 +168,29 @@ function crtProjectsToggle() {
 		}
 	}
 	if (toShow == -1) {
+		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		vidStatic.classList.toggle('hide');			
+		setTimeout(function(){
+		vidStatic.classList.toggle('hide');			
 		crtProjects[0].classList.toggle('hide');
+		},200);		
 	}else if(toShow == crtProjects.length-1) {
 		crtProjects[toShow].classList.toggle('hide');
-		crtProjects[0].classList.toggle('hide');		
+		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		vidStatic.classList.toggle('hide');	
+		setTimeout(function(){
+		vidStatic.classList.toggle('hide');			
+		crtProjects[0].classList.toggle('hide');
+		},200);
+				
 	}else {
 		crtProjects[toShow].classList.toggle('hide');
-		crtProjects[toShow + 1].classList.toggle('hide');	
+		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		vidStatic.classList.toggle('hide');			
+		setTimeout(function(){
+		vidStatic.classList.toggle('hide');			
+		crtProjects[toShow + 1].classList.toggle('hide');
+		},200);		
 	}
 }	
 knob1.addEventListener('click', crtPagesToggle);
