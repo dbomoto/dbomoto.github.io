@@ -50,3 +50,7 @@ static-gifs:
 	source: "https://giphy.com/embed/14b7jOY6PdD3lC"
 	contributor: vektormon / @vektormon
 
+1-second-of-silence:
+	source:https://github.com/anars/blank-audio/blob/master/1-second-of-silence.mp3
+	contributor:https://github.com/kacode
+

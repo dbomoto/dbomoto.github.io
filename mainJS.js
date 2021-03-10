@@ -1,7 +1,13 @@
 ﻿/*eslint-env es6*/
 /*eslint-env browser*/
 window.onload = function(){
+var audioStatic = document.getElementById('audioStatic');
+audioStatic.volume = 0.09;
+audioStatic.loop = true;
+
 var initialAnimation = document.getElementsByClassName('initial-animation')[0];
+
+	
 var animateWidth = 0;
 var animateHeight = 0;
 var vidStatic = document.getElementsByClassName('static-gif')[0];
@@ -22,7 +28,7 @@ function randomStatic(min, max) { // min and max included
 var staticIframe = document.getElementsByClassName('static-iframe')[0].getAttributeNode('src'); 
 staticIframe.value = vidStaticSource[randomStatic(0,5)];
 	
-function opening(time){
+function opening(){
 	animateWidth += 0.5;
 	animateHeight += 0.5;
 	if (animateHeight > 5){
@@ -65,10 +71,15 @@ function openingPart3(){
 	}
 	initialAnimation.style.height = `${animateHeight}%`;
 	if (animateHeight == 70) {
-
+		
+		audioStatic.play();
+		
 		vidStatic.classList.toggle('hide');
 		initialAnimation.classList.toggle('hide');
 		setTimeout(function(){
+			
+			audioStatic.pause();
+			
 			document.getElementsByClassName('about')[0].classList.toggle('hide');
 			vidStatic.classList.toggle('hide');
 		}, 600)	
@@ -126,40 +137,46 @@ function crtPagesToggle() {
 		}
 	}
 	if (toShow == -1) {
+		audioStatic.play();
 		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
 		staticIframe.value = vidStaticSource[randomStatic(0,5)];
 		vidStatic.classList.toggle('hide');		
 		setTimeout(function(){
-		vidStatic.classList.toggle('hide');			
-		crtPages[0].classList.toggle('hide');
-		knob1.addEventListener('click', crtPagesToggle);
-		knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
+			audioStatic.pause();
+			vidStatic.classList.toggle('hide');			
+			crtPages[0].classList.toggle('hide');
+			knob1.addEventListener('click', crtPagesToggle);
+			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
 		},200);		
 	}else if(toShow == crtProjects.length-1) {
+		audioStatic.play();
 		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
 		crtPages[toShow].classList.toggle('hide');
 		staticIframe.value = vidStaticSource[randomStatic(0,5)];
 		vidStatic.classList.toggle('hide');
 		setTimeout(function(){
-		vidStatic.classList.toggle('hide');			
-		crtPages[0].classList.toggle('hide');
-		knob1.addEventListener('click', crtPagesToggle);
-		knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
+			audioStatic.pause();
+			vidStatic.classList.toggle('hide');			
+			crtPages[0].classList.toggle('hide');
+			knob1.addEventListener('click', crtPagesToggle);
+			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
 		},200);
 					
 	}else {
+		audioStatic.play();
 		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
 		crtPages[toShow].classList.toggle('hide');
 		staticIframe.value = vidStaticSource[randomStatic(0,5)];
 		vidStatic.classList.toggle('hide');
 		setTimeout(function(){
-		vidStatic.classList.toggle('hide');		
-		crtPages[toShow + 1].classList.toggle('hide');
-		knob1.addEventListener('click', crtPagesToggle);
-		knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
+			audioStatic.pause();
+			vidStatic.classList.toggle('hide');		
+			crtPages[toShow + 1].classList.toggle('hide');
+			knob1.addEventListener('click', crtPagesToggle);
+			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
 		},200)
 
 	}
@@ -181,40 +198,46 @@ function crtProjectsToggle() {
 		}
 	}
 	if (toShow == -1) {
+		audioStatic.play();
 		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
 		knob2.removeEventListener('click', crtProjectsToggle);
 		staticIframe.value = vidStaticSource[randomStatic(0,5)];
 		vidStatic.classList.toggle('hide');			
 		setTimeout(function(){
-		vidStatic.classList.toggle('hide');			
-		crtProjects[0].classList.toggle('hide');
-		knob2.addEventListener('click', crtProjectsToggle);	
-		knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
+			audioStatic.pause();
+			vidStatic.classList.toggle('hide');			
+			crtProjects[0].classList.toggle('hide');
+			knob2.addEventListener('click', crtProjectsToggle);	
+			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
 		},200);		
 	}else if(toShow == crtProjects.length-1) {
+		audioStatic.play();
 		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
 		knob2.removeEventListener('click', crtProjectsToggle);
 		crtProjects[toShow].classList.toggle('hide');
 		staticIframe.value = vidStaticSource[randomStatic(0,5)];
 		vidStatic.classList.toggle('hide');	
 		setTimeout(function(){
-		vidStatic.classList.toggle('hide');			
-		crtProjects[0].classList.toggle('hide');
-		knob2.addEventListener('click', crtProjectsToggle);
-		knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})				
+			audioStatic.pause();
+			vidStatic.classList.toggle('hide');			
+			crtProjects[0].classList.toggle('hide');
+			knob2.addEventListener('click', crtProjectsToggle);
+			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
 		},200);
 				
 	}else {
+		audioStatic.play();
 		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
 		knob2.removeEventListener('click', crtProjectsToggle);
 		crtProjects[toShow].classList.toggle('hide');
 		staticIframe.value = vidStaticSource[randomStatic(0,5)];
 		vidStatic.classList.toggle('hide');			
 		setTimeout(function(){
-		vidStatic.classList.toggle('hide');			
-		crtProjects[toShow + 1].classList.toggle('hide');
-		knob2.addEventListener('click', crtProjectsToggle);	
-		knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
+			audioStatic.pause();
+			vidStatic.classList.toggle('hide');			
+			crtProjects[toShow + 1].classList.toggle('hide');
+			knob2.addEventListener('click', crtProjectsToggle);	
+			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
 		},200);		
 	}
 }	
