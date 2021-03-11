@@ -196,6 +196,10 @@ h1{
 	display: none;
 }
 
+#powerButton {
+	position: absolute;
+}
+
 .under-dev {
 	display: none;
 	color: orange;

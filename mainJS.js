@@ -5,6 +5,7 @@ var audioStatic = document.getElementById('audioStatic');
 audioStatic.volume = 0.09;
 audioStatic.loop = true;
 
+	
 var initialAnimation = document.getElementsByClassName('initial-animation')[0];
 
 	
@@ -19,6 +20,10 @@ var vidStaticSource = [
 	"https://giphy.com/embed/cIzTaqISogDFS",
 	"https://giphy.com/embed/14b7jOY6PdD3lC"
 ];
+	
+	
+/*download the GIF's, sometimes a 404 error happens*/	
+	
 	
 function randomStatic(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -87,8 +92,18 @@ function openingPart3(){
 		window.requestAnimationFrame(openingPart3);
 	}		
 }	
+/*
+workaround for disabled autoplay on all browsers for sercurity reasons
+
+When you attempt to autoplay audio without the user interacting with the document first, it will throw an error. So the key is to get the user interact with the document first.
+
+Source: https://stackoverflow.com/questions/58002958/is-there-any-workaround-or-hack-to-make-the-audio-autoplay-on-chrome-firefox
+Contributor: https://stackoverflow.com/users/11519208/taki7o7
+*/	
+
+var powerButton = document.getElementById('powerButton');
+powerButton.addEventListener('click',()=>{window.requestAnimationFrame(opening);})
 	
-window.requestAnimationFrame(opening);
 	
 /*animation for knob-1*/
 var knob1 = document.getElementsByClassName('knob-1')[0];

@@ -54,3 +54,7 @@ static-gifs:
 	source:https://github.com/anars/blank-audio/blob/master/1-second-of-silence.mp3
 	contributor:https://github.com/kacode
 
+power switch
+	source: https://ux.stackexchange.com/questions/43250/is-there-a-better-way-to-design-switches-than-i-o
+	source of image: not indicated
+
