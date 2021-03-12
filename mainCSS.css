@@ -198,6 +198,11 @@ h1{
 
 #powerButton {
 	position: absolute;
+	background-image: url('Resources/off-state-switch.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	left: 83%;
+	top: 61%;
 }
 
 .under-dev {
@@ -259,6 +264,10 @@ h1{
 		width: 26px;
 		height: 23px;
 		top: 37.9%;
+	}
+	#powerButton {
+		width: 30px;
+		height: 30px;
 	}	
 	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4 {
 		width: 171px;
@@ -295,6 +304,10 @@ h1{
 		height: 50px;
 		top: 37%;
 	}
+	#powerButton {
+		width: 57px;
+		height: 57px;
+	}	
 	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4 {
 		width: 337px;
 		height: 270px;
@@ -328,6 +341,10 @@ h1{
 		width: 66px;
 		height: 63px;
 	}
+	#powerButton {
+		width: 70px;
+		height: 70px;
+	}	
 	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4 {
 		width: 431px;
 		height: 335px;
@@ -360,7 +377,11 @@ h1{
 	.knob-2 {
 		width: 87px;
 		height: 84px;
-	}	
+	}
+	#powerButton {
+		width: 90px;
+		height: 90px;
+	}
 	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4 {
 		width: 556px;
 		height: 432px;
@@ -395,7 +416,10 @@ h1{
 		width: 106px;
 		height: 103px;
 	}
-	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4 {
+	#powerButton {
+		width: 110px;
+		height: 110px;
+	}	.about,.skills,.certificates,.contact,.project1,.project2,.project3,.project4 {
 		width: 675px;
 		height: 525px;
 	}
