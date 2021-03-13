@@ -5,6 +5,8 @@ var audioStatic = document.getElementById('audioStatic');
 audioStatic.volume = 0.09;
 audioStatic.loop = true;
 
+var crtState = false;	
+
 	
 var initialAnimation = document.getElementsByClassName('initial-animation')[0];
 
@@ -12,15 +14,26 @@ var initialAnimation = document.getElementsByClassName('initial-animation')[0];
 var animateWidth = 0;
 var animateHeight = 0;
 var vidStatic = document.getElementsByClassName('static-gif')[0];
-var vidStaticSource = [
-	"https://giphy.com/embed/l41K3o5TzvmhZwd4A",
-	"https://giphy.com/embed/3o6vXRxrhj7Ov94Gbu",
-	"https://giphy.com/embed/riw3K0D2h4klG",
-	"https://giphy.com/embed/KYOD96tSm8Ovm",
-	"https://giphy.com/embed/cIzTaqISogDFS",
-	"https://giphy.com/embed/14b7jOY6PdD3lC"
-];
 	
+// previous method
+	
+//var vidStaticSource = [
+//	"https://giphy.com/embed/l41K3o5TzvmhZwd4A",
+//	"https://giphy.com/embed/3o6vXRxrhj7Ov94Gbu",
+//	"https://giphy.com/embed/riw3K0D2h4klG",
+//	"https://giphy.com/embed/KYOD96tSm8Ovm",
+//	"https://giphy.com/embed/cIzTaqISogDFS",
+//	"https://giphy.com/embed/14b7jOY6PdD3lC"
+//];
+	
+var vidStaticSource = [
+'Resources/l41K3o5TzvmhZwd4A.gif',
+'Resources/3o6vXRxrhj7Ov94Gbu.gif',
+'Resources/riw3K0D2h4klG.gif',
+'Resources/KYOD96tSm8Ovm.gif',
+'Resources/cIzTaqISogDFS.gif',
+'Resources/14b7jOY6PdD3lC.gif'	
+];
 	
 /*download the GIF's, sometimes a 404 error happens*/	
 	
@@ -102,7 +115,21 @@ Contributor: https://stackoverflow.com/users/11519208/taki7o7
 */	
 
 var powerButton = document.getElementById('powerButton');
-powerButton.addEventListener('click',()=>{window.requestAnimationFrame(opening);})
+powerButton.addEventListener('click',()=>{
+	if (!crtState){
+		crtState = true;
+		window.requestAnimationFrame(opening);
+		powerButton.setAttribute('style',"background-image: url('Resources/on-state-switch.png')");
+	} else {
+		crtState = false;
+		window.requestAnimationFrame(closing);
+		powerButton.setAttribute('style',"background-image: url('Resources/off-state-switch.png')");		
+	}
+})
+	
+function closing() {
+
+}
 	
 	
 /*animation for knob-1*/

@@ -174,10 +174,19 @@ body {
 */
 }
 
+/*previous method*/
+/*
 .static-gif {
 	position: absolute;
 	left: 11%;
 	top: 8%;
+}
+*/
+
+.static-gif {
+	position: absolute;
+	left: 14%;
+	top: 12%;
 }
 
 /*sets the padding of the crt to display content in the middle*/
