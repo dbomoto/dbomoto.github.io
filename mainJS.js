@@ -43,9 +43,12 @@ function randomStatic(min, max) { // min and max included
 }
 
 /*one shot, only during the opening of the website*/	
-var staticIframe = document.getElementsByClassName('static-iframe')[0].getAttributeNode('src'); 
-staticIframe.value = vidStaticSource[randomStatic(0,5)];
+//var staticIframe = document.getElementsByClassName('static-iframe')[0].getAttributeNode('src'); 
+//staticIframe.value = vidStaticSource[randomStatic(0,5)];
 	
+function staticIframe() { vidStatic.style.backgroundImage = `url("${vidStaticSource[randomStatic(0,5)]}"`;	
+}
+						 	
 function opening(){
 	animateWidth += 0.5;
 	animateHeight += 0.5;
@@ -134,29 +137,31 @@ function closing() {
 	
 /*animation for knob-1*/
 var knob1 = document.getElementsByClassName('knob-1')[0];
-var knob1Counter = 0;
-function knobRotate() {
-	knob1Counter += 45;
-	if (knob1Counter == 360) {
-		knob1Counter = 0;
-	}
-	knob1.style.transform = `rotate(${knob1Counter}deg)`;
-}
-knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
+var knob1Counter = 0;	
+	
+//function knobRotate() {
+//	knob1Counter += 45;
+//	console.log(knob1Counter)
+//	if (knob1Counter == 360) {
+//		knob1Counter = 0;
+//	}
+//	knob1.style.transform = `rotate(${knob1Counter}deg)`;
+//}
+//knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 
 
 	
 /*animation for knob-2*/	
 var knob2 = document.getElementsByClassName('knob-2')[0];
 var knob2Counter = 0;
-function knobRotate2() {
-	knob2Counter += 45;
-	if (knob2Counter == 360) {
-		knob2Counter = 0;
-	}
-	knob2.style.transform = `rotate(${knob2Counter}deg)`;
-}
-knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})	
+//function knobRotate2() {
+//	knob2Counter += 45;
+//	if (knob2Counter == 360) {
+//		knob2Counter = 0;
+//	}
+//	knob2.style.transform = `rotate(${knob2Counter}deg)`;
+//}
+//knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})	
 	
 
 	
@@ -164,6 +169,13 @@ var crtPages = document.getElementsByClassName('crt-pages');
 var crtProjects = document.getElementsByClassName('crt-projects');
 /*changes the display in the crt as Pages/Projects knob is clicked*/		
 function crtPagesToggle() {
+	knob1Counter += 45;
+	if (knob1Counter == 360) {
+		knob1Counter = 0;
+	}
+	knob1.style.transform = `rotate(${knob1Counter}deg)`;	
+
+	
 	let toShow=0;
 	for(let x of crtProjects){
 		if(!x.classList.contains('hide')){
@@ -178,53 +190,61 @@ function crtPagesToggle() {
 			toShow = -1;
 		}
 	}
+
 	if (toShow == -1) {
 		audioStatic.play();
-		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
+//		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
-		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		staticIframe();
 		vidStatic.classList.toggle('hide');		
 		setTimeout(function(){
 			audioStatic.pause();
 			vidStatic.classList.toggle('hide');			
 			crtPages[0].classList.toggle('hide');
 			knob1.addEventListener('click', crtPagesToggle);
-			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
+//			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
 		},200);		
-	}else if(toShow == crtProjects.length-1) {
+	}else if(toShow == crtPages.length-1) {
 		audioStatic.play();
-		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
+//		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
 		crtPages[toShow].classList.toggle('hide');
-		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		staticIframe();
 		vidStatic.classList.toggle('hide');
 		setTimeout(function(){
 			audioStatic.pause();
 			vidStatic.classList.toggle('hide');			
 			crtPages[0].classList.toggle('hide');
 			knob1.addEventListener('click', crtPagesToggle);
-			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
+//			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
 		},200);
 					
 	}else {
 		audioStatic.play();
-		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
+//		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
 		crtPages[toShow].classList.toggle('hide');
-		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		staticIframe();
 		vidStatic.classList.toggle('hide');
 		setTimeout(function(){
 			audioStatic.pause();
 			vidStatic.classList.toggle('hide');		
 			crtPages[toShow + 1].classList.toggle('hide');
 			knob1.addEventListener('click', crtPagesToggle);
-			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
+//			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
 		},200)
 
 	}
 }	
 	
 function crtProjectsToggle() {
+	knob2Counter += 45;
+	if (knob2Counter == 360) {
+		knob2Counter = 0;
+	}
+	knob2.style.transform = `rotate(${knob2Counter}deg)`;
+	
+	
 	let toShow=0;
 	for(let x of crtPages){
 		if(!x.classList.contains('hide')){
@@ -241,45 +261,45 @@ function crtProjectsToggle() {
 	}
 	if (toShow == -1) {
 		audioStatic.play();
-		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
+//		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
 		knob2.removeEventListener('click', crtProjectsToggle);
-		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		staticIframe();
 		vidStatic.classList.toggle('hide');			
 		setTimeout(function(){
 			audioStatic.pause();
 			vidStatic.classList.toggle('hide');			
 			crtProjects[0].classList.toggle('hide');
 			knob2.addEventListener('click', crtProjectsToggle);	
-			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
+//			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
 		},200);		
 	}else if(toShow == crtProjects.length-1) {
 		audioStatic.play();
-		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
+//		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
 		knob2.removeEventListener('click', crtProjectsToggle);
 		crtProjects[toShow].classList.toggle('hide');
-		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		staticIframe();
 		vidStatic.classList.toggle('hide');	
 		setTimeout(function(){
 			audioStatic.pause();
 			vidStatic.classList.toggle('hide');			
 			crtProjects[0].classList.toggle('hide');
 			knob2.addEventListener('click', crtProjectsToggle);
-			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
+//			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
 		},200);
 				
 	}else {
 		audioStatic.play();
-		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
+//		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
 		knob2.removeEventListener('click', crtProjectsToggle);
 		crtProjects[toShow].classList.toggle('hide');
-		staticIframe.value = vidStaticSource[randomStatic(0,5)];
+		staticIframe();
 		vidStatic.classList.toggle('hide');			
 		setTimeout(function(){
 			audioStatic.pause();
 			vidStatic.classList.toggle('hide');			
 			crtProjects[toShow + 1].classList.toggle('hide');
 			knob2.addEventListener('click', crtProjectsToggle);	
-			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
+//			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
 		},200);		
 	}
 }	

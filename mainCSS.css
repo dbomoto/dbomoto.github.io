@@ -184,9 +184,14 @@ body {
 */
 
 .static-gif {
+	background-image: url('Resources/14b7jOY6PdD3lC.gif');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	
+	
 	position: absolute;
-	left: 14%;
-	top: 12%;
+	left: 11%;
+	top: 10%;
 }
 
 /*sets the padding of the crt to display content in the middle*/
@@ -432,10 +437,12 @@ h1{
 		width: 675px;
 		height: 525px;
 	}
+	
 	.static-gif {
 		width: 685px;
 		height: 544px;
-	}	
+	}
+	
 /*
 	.static-vid {
 		width: 675px;
