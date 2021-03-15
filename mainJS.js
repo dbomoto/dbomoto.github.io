@@ -15,6 +15,9 @@ var animateWidth = 0;
 var animateHeight = 0;
 var vidStatic = document.getElementsByClassName('static-gif')[0];
 	
+var crtPages = document.getElementsByClassName('crt-pages');
+var crtProjects = document.getElementsByClassName('crt-projects');	
+	
 // previous method
 	
 //var vidStaticSource = [
@@ -25,6 +28,10 @@ var vidStatic = document.getElementsByClassName('static-gif')[0];
 //	"https://giphy.com/embed/cIzTaqISogDFS",
 //	"https://giphy.com/embed/14b7jOY6PdD3lC"
 //];
+
+	
+/*suggest using image sprite for all images for a single load from the server*/
+/*can gif's be sprited?*/	
 	
 var vidStaticSource = [
 'Resources/l41K3o5TzvmhZwd4A.gif',
@@ -46,8 +53,11 @@ function randomStatic(min, max) { // min and max included
 //var staticIframe = document.getElementsByClassName('static-iframe')[0].getAttributeNode('src'); 
 //staticIframe.value = vidStaticSource[randomStatic(0,5)];
 	
-function staticIframe() { vidStatic.style.backgroundImage = `url("${vidStaticSource[randomStatic(0,5)]}"`;	
+function staticIframe() { 
+	vidStatic.style.backgroundImage = `url("${vidStaticSource[randomStatic(0,5)]}"`;	
 }
+	
+/*make all opening functions as only one function since it is only triggered once?*/	
 						 	
 function opening(){
 	animateWidth += 0.5;
@@ -121,17 +131,38 @@ var powerButton = document.getElementById('powerButton');
 powerButton.addEventListener('click',()=>{
 	if (!crtState){
 		crtState = true;
-		window.requestAnimationFrame(opening);
 		powerButton.setAttribute('style',"background-image: url('Resources/on-state-switch.png')");
+		window.requestAnimationFrame(opening);
 	} else {
 		crtState = false;
-		window.requestAnimationFrame(closing);
-		powerButton.setAttribute('style',"background-image: url('Resources/off-state-switch.png')");		
+		powerButton.setAttribute('style',"background-image: url('Resources/off-state-switch.png')");
+		window.requestAnimationFrame(closing);		
 	}
 })
+
+/*produces stuttering or visible frames as height is going down*/
+/*add 2 black horizontal bars inside the dive of initial-animation, top and bottom. since no stuttering happens when div is expanding, expand the bars to create illusion of reducing height of white background.*/	
+/*experiment on transition if it generates a cleaner output*/	
+/*To trigger an element's transition, toggle a class name on that element that triggers it.*/	
 	
 function closing() {
-
+	for(let x = 0; x <= crtPages.length-1; x++){
+		crtPages[x].classList.add('hide');
+	}
+	for(let x = 0; x <= crtPages.length-1; x++){
+		crtProjects[x].classList.add('hide');
+	}
+	initialAnimation.classList.toggle('hide');
+	animateHeight -= 3;
+	if (animateHeight < 1){
+		animateHeight = 1;
+	}
+	initialAnimation.style.height = `${animateHeight}%`;
+	if (animateHeight <= 2){
+		alert('in development')
+	}else {
+		window.requestAnimationFrame(closing)		
+	}
 }
 	
 	
@@ -165,8 +196,7 @@ var knob2Counter = 0;
 	
 
 	
-var crtPages = document.getElementsByClassName('crt-pages');
-var crtProjects = document.getElementsByClassName('crt-projects');
+
 /*changes the display in the crt as Pages/Projects knob is clicked*/		
 function crtPagesToggle() {
 	knob1Counter += 45;
