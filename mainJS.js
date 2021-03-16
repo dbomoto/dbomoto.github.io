@@ -71,6 +71,7 @@ function opening(){
 	initialAnimation.style.width = `${animateWidth}%`;
 	initialAnimation.style.height = `${animateHeight}%`;
 	if ((animateHeight == 5) && (animateWidth == 2)) {
+		initialAnimation.style.borderRadius =  '0px';
 		openingPart2();
 	}else if ((animateWidth < 2) || (animateHeight < 5)){
 		window.requestAnimationFrame(opening);
@@ -114,7 +115,7 @@ function openingPart3(){
 			document.getElementsByClassName('about')[0].classList.toggle('hide');
 			vidStatic.classList.toggle('hide');
 		}, 600)	
-	}else if (animateHeight < 70){
+	}else {
 		window.requestAnimationFrame(openingPart3);
 	}		
 }	
@@ -145,25 +146,61 @@ powerButton.addEventListener('click',()=>{
 /*experiment on transition if it generates a cleaner output*/	
 /*To trigger an element's transition, toggle a class name on that element that triggers it.*/	
 	
+	
 function closing() {
+	initialAnimation.classList.toggle('hide');
 	for(let x = 0; x <= crtPages.length-1; x++){
 		crtPages[x].classList.add('hide');
 	}
 	for(let x = 0; x <= crtPages.length-1; x++){
 		crtProjects[x].classList.add('hide');
-	}
-	initialAnimation.classList.toggle('hide');
-	animateHeight -= 3;
-	if (animateHeight < 1){
-		animateHeight = 1;
+	}	
+	closing2();
+}
+	
+function closing2() {
+	animateHeight -= 4;	
+	if (animateHeight < 2){
+		animateHeight = 2;
 	}
 	initialAnimation.style.height = `${animateHeight}%`;
-	if (animateHeight <= 2){
-		alert('in development')
+	if (animateHeight == 2) {
+		closing3();
 	}else {
-		window.requestAnimationFrame(closing)		
+		window.requestAnimationFrame(closing2);
+	}			
+}
+
+function closing3(){
+	animateWidth -= 4;	
+	if (animateWidth < 2){
+		animateWidth = 2;
+	}
+	initialAnimation.style.width = `${animateWidth}%`;
+	if (animateWidth == 2) {
+		initialAnimation.style.borderRadius =  '50%';
+		closing4();
+	}else {
+		window.requestAnimationFrame(closing3);
+	}		
+}
+
+function closing4(){
+	animateHeight -= 0.2;
+	animateWidth -= 0.2;
+//	console.log(`${animateHeight}, ${animateWidth}`);
+	initialAnimation.style.width = `${animateWidth}%`;
+	initialAnimation.style.height = `${animateHeight}%`;
+	if (animateWidth < 0){
+/*redeclare 0 to make sure the values of initial animation is zero*/
+		animateHeight = 0 ;
+		animateWidth = 0 ;	
+
+	} else {
+		window.requestAnimationFrame(closing4);		
 	}
 }
+	
 	
 	
 /*animation for knob-1*/

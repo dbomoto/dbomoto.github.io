@@ -112,6 +112,10 @@ body {
 /*	background-color: red;*/
 /*	set width and height equal to background class*/
 	position: relative;
+/*
+	background-color: blue;
+	overflow: hidden;
+*/
 }
 
 /*content that can be seen inside the CRT*/
@@ -218,6 +222,39 @@ h1{
 	left: 83%;
 	top: 61%;
 }
+
+/*
+.closing-animation-1{
+	background-color:green;
+	position: absolute;
+*/
+/*makes div expands downwards bec of top property*/
+/*
+	left: 10%;
+	top: 8%;
+*/
+/*	change later on media query	*/
+/*
+	width: 700px;
+	height: 10px;
+}
+*/
+/*
+.closing-animation-2{
+	background-color:green;
+	position: absolute;
+*/
+/*maked div expands upwards bec of bottom property*/
+/*
+	left: 10%;
+	bottom: 23%;
+*/
+/*	change later on media query	*/
+/*
+	width: 700px;
+	height: 10px;
+}
+*/
 
 .under-dev {
 	display: none;
