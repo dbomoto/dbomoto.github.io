@@ -105,7 +105,7 @@ function openingPart3(){
 	if (animateHeight == 70) {
 		
 		audioStatic.play();
-		
+		staticIframe();
 		vidStatic.classList.toggle('hide');
 		initialAnimation.classList.toggle('hide');
 		setTimeout(function(){
@@ -114,6 +114,9 @@ function openingPart3(){
 			
 			document.getElementsByClassName('about')[0].classList.toggle('hide');
 			vidStatic.classList.toggle('hide');
+			powerButton.addEventListener('click', powerButtonSwitch)
+			knob1.addEventListener('click', crtPagesToggle);
+			knob2.addEventListener('click', crtProjectsToggle);
 		}, 600)	
 	}else {
 		window.requestAnimationFrame(openingPart3);
@@ -128,18 +131,38 @@ Source: https://stackoverflow.com/questions/58002958/is-there-any-workaround-or-
 Contributor: https://stackoverflow.com/users/11519208/taki7o7
 */	
 
+//var powerButton = document.getElementById('powerButton');
+//powerButton.addEventListener('click',()=>{
+//	if (!crtState){
+//		crtState = true;
+//		powerButton.setAttribute('style',"background-image: url('Resources/on-state-switch.png')");
+//		window.requestAnimationFrame(opening);
+//	} else {
+//		crtState = false;
+//		powerButton.setAttribute('style',"background-image: url('Resources/off-state-switch.png')");
+//		window.requestAnimationFrame(closing);		
+//	}
+//})
+	
 var powerButton = document.getElementById('powerButton');
-powerButton.addEventListener('click',()=>{
+powerButton.addEventListener('click', powerButtonSwitch)	
+function powerButtonSwitch() {
 	if (!crtState){
 		crtState = true;
 		powerButton.setAttribute('style',"background-image: url('Resources/on-state-switch.png')");
+		powerButton.removeEventListener('click', powerButtonSwitch);
+		knob1.removeEventListener('click', crtPagesToggle);
+		knob2.removeEventListener('click', crtProjectsToggle);
 		window.requestAnimationFrame(opening);
 	} else {
 		crtState = false;
 		powerButton.setAttribute('style',"background-image: url('Resources/off-state-switch.png')");
+		powerButton.removeEventListener('click', powerButtonSwitch);
+		knob1.removeEventListener('click', crtPagesToggle);
+		knob2.removeEventListener('click', crtProjectsToggle);
 		window.requestAnimationFrame(closing);		
-	}
-})
+	}	
+}	
 
 /*produces stuttering or visible frames as height is going down*/
 /*add 2 black horizontal bars inside the dive of initial-animation, top and bottom. since no stuttering happens when div is expanding, expand the bars to create illusion of reducing height of white background.*/	
@@ -195,7 +218,7 @@ function closing4(){
 /*redeclare 0 to make sure the values of initial animation is zero*/
 		animateHeight = 0 ;
 		animateWidth = 0 ;	
-
+		powerButton.addEventListener('click', powerButtonSwitch);
 	} else {
 		window.requestAnimationFrame(closing4);		
 	}
@@ -370,7 +393,8 @@ function crtProjectsToggle() {
 		},200);		
 	}
 }	
-knob1.addEventListener('click', crtPagesToggle);
-knob2.addEventListener('click', crtProjectsToggle);
+// add this after the opening animation to enable knob animations.
+//knob1.addEventListener('click', crtPagesToggle);
+//knob2.addEventListener('click', crtProjectsToggle);
 	
 }
