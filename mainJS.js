@@ -3,8 +3,13 @@
 window.onload = function(){
 var audioStatic = document.getElementById('audioStatic');
 audioStatic.volume = 0.09;
+//audioStatic.volume = 0;	
 audioStatic.loop = true;
 
+var knobSound = document.getElementById('knob-sound');
+knobSound.volume = 0.2;
+knobSound.playbackRate = 3.5;
+	
 var crtState = false;	
 
 	
@@ -283,12 +288,14 @@ function crtPagesToggle() {
 
 	if (toShow == -1) {
 		audioStatic.play();
+		knobSound.play();
 //		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
 		staticIframe();
 		vidStatic.classList.toggle('hide');		
 		setTimeout(function(){
 			audioStatic.pause();
+			
 			vidStatic.classList.toggle('hide');			
 			crtPages[0].classList.toggle('hide');
 			knob1.addEventListener('click', crtPagesToggle);
@@ -296,6 +303,7 @@ function crtPagesToggle() {
 		},200);		
 	}else if(toShow == crtPages.length-1) {
 		audioStatic.play();
+		knobSound.play();
 //		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
 		crtPages[toShow].classList.toggle('hide');
@@ -311,6 +319,7 @@ function crtPagesToggle() {
 					
 	}else {
 		audioStatic.play();
+		knobSound.play();
 //		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
 		crtPages[toShow].classList.toggle('hide');
