@@ -57,7 +57,13 @@ static-gifs:
 power switch
 	source: https://ux.stackexchange.com/questions/43250/is-there-a-better-way-to-design-switches-than-i-o
 	source of image: not indicated
+
 knob-sound
 	source: https://www.fesliyanstudios.com/soundeffects-download.php?id=1073
 	license: royalty free
+	audio trim:https://audiotrimmer.com/
 
+Light-Switch-On-Off-06-m
+	source: https://www.fesliyanstudios.com/soundeffects-download.php?id=441
+	license: royalty free
+	audio trim:https://audiotrimmer.com/

@@ -295,7 +295,8 @@ function crtPagesToggle() {
 		vidStatic.classList.toggle('hide');		
 		setTimeout(function(){
 			audioStatic.pause();
-			
+			knobSound.pause();
+			knobSound.currentTime = 0;
 			vidStatic.classList.toggle('hide');			
 			crtPages[0].classList.toggle('hide');
 			knob1.addEventListener('click', crtPagesToggle);
@@ -311,6 +312,8 @@ function crtPagesToggle() {
 		vidStatic.classList.toggle('hide');
 		setTimeout(function(){
 			audioStatic.pause();
+			knobSound.pause();
+			knobSound.currentTime = 0;
 			vidStatic.classList.toggle('hide');			
 			crtPages[0].classList.toggle('hide');
 			knob1.addEventListener('click', crtPagesToggle);
@@ -327,6 +330,8 @@ function crtPagesToggle() {
 		vidStatic.classList.toggle('hide');
 		setTimeout(function(){
 			audioStatic.pause();
+			knobSound.pause();
+			knobSound.currentTime = 0;			
 			vidStatic.classList.toggle('hide');		
 			crtPages[toShow + 1].classList.toggle('hide');
 			knob1.addEventListener('click', crtPagesToggle);
@@ -360,12 +365,15 @@ function crtProjectsToggle() {
 	}
 	if (toShow == -1) {
 		audioStatic.play();
+		knobSound.play();		
 //		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
 		knob2.removeEventListener('click', crtProjectsToggle);
 		staticIframe();
 		vidStatic.classList.toggle('hide');			
 		setTimeout(function(){
 			audioStatic.pause();
+			knobSound.pause();
+			knobSound.currentTime = 0;				
 			vidStatic.classList.toggle('hide');			
 			crtProjects[0].classList.toggle('hide');
 			knob2.addEventListener('click', crtProjectsToggle);	
@@ -373,6 +381,7 @@ function crtProjectsToggle() {
 		},200);		
 	}else if(toShow == crtProjects.length-1) {
 		audioStatic.play();
+		knobSound.play();		
 //		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
 		knob2.removeEventListener('click', crtProjectsToggle);
 		crtProjects[toShow].classList.toggle('hide');
@@ -380,6 +389,8 @@ function crtProjectsToggle() {
 		vidStatic.classList.toggle('hide');	
 		setTimeout(function(){
 			audioStatic.pause();
+			knobSound.pause();
+			knobSound.currentTime = 0;				
 			vidStatic.classList.toggle('hide');			
 			crtProjects[0].classList.toggle('hide');
 			knob2.addEventListener('click', crtProjectsToggle);
@@ -388,6 +399,7 @@ function crtProjectsToggle() {
 				
 	}else {
 		audioStatic.play();
+		knobSound.play();		
 //		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
 		knob2.removeEventListener('click', crtProjectsToggle);
 		crtProjects[toShow].classList.toggle('hide');
@@ -395,6 +407,8 @@ function crtProjectsToggle() {
 		vidStatic.classList.toggle('hide');			
 		setTimeout(function(){
 			audioStatic.pause();
+			knobSound.pause();
+			knobSound.currentTime = 0;				
 			vidStatic.classList.toggle('hide');			
 			crtProjects[toShow + 1].classList.toggle('hide');
 			knob2.addEventListener('click', crtProjectsToggle);	
