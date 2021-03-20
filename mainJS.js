@@ -2,13 +2,17 @@
 /*eslint-env browser*/
 window.onload = function(){
 var audioStatic = document.getElementById('audioStatic');
-audioStatic.volume = 0.09;
+audioStatic.volume = 0.1;
 //audioStatic.volume = 0;	
 audioStatic.loop = true;
 
 var knobSound = document.getElementById('knob-sound');
 knobSound.volume = 0.2;
 knobSound.playbackRate = 3.5;
+
+var switchSound = document.getElementById("switch-sound");
+switchSound.volume = 0.2;
+switchSound.playbackRate = 2;
 	
 var crtState = false;	
 
@@ -153,6 +157,7 @@ var powerButton = document.getElementById('powerButton');
 powerButton.addEventListener('click', powerButtonSwitch)	
 function powerButtonSwitch() {
 	if (!crtState){
+		switchSound.play();
 		crtState = true;
 		powerButton.setAttribute('style',"background-image: url('Resources/on-state-switch.png')");
 		powerButton.removeEventListener('click', powerButtonSwitch);
@@ -160,6 +165,7 @@ function powerButtonSwitch() {
 		knob2.removeEventListener('click', crtProjectsToggle);
 		window.requestAnimationFrame(opening);
 	} else {
+		switchSound.play();
 		crtState = false;
 		powerButton.setAttribute('style',"background-image: url('Resources/off-state-switch.png')");
 		powerButton.removeEventListener('click', powerButtonSwitch);
