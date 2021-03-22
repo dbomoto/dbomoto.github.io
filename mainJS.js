@@ -3,7 +3,6 @@
 window.onload = function(){
 var audioStatic = document.getElementById('audioStatic');
 audioStatic.volume = 0.1;
-//audioStatic.volume = 0;	
 audioStatic.loop = true;
 
 var knobSound = document.getElementById('knob-sound');
@@ -26,17 +25,6 @@ var vidStatic = document.getElementsByClassName('static-gif')[0];
 	
 var crtPages = document.getElementsByClassName('crt-pages');
 var crtProjects = document.getElementsByClassName('crt-projects');	
-	
-// previous method
-	
-//var vidStaticSource = [
-//	"https://giphy.com/embed/l41K3o5TzvmhZwd4A",
-//	"https://giphy.com/embed/3o6vXRxrhj7Ov94Gbu",
-//	"https://giphy.com/embed/riw3K0D2h4klG",
-//	"https://giphy.com/embed/KYOD96tSm8Ovm",
-//	"https://giphy.com/embed/cIzTaqISogDFS",
-//	"https://giphy.com/embed/14b7jOY6PdD3lC"
-//];
 
 	
 /*suggest using image sprite for all images for a single load from the server*/
@@ -59,8 +47,6 @@ function randomStatic(min, max) { // min and max included
 }
 
 /*one shot, only during the opening of the website*/	
-//var staticIframe = document.getElementsByClassName('static-iframe')[0].getAttributeNode('src'); 
-//staticIframe.value = vidStaticSource[randomStatic(0,5)];
 	
 function staticIframe() { 
 	vidStatic.style.backgroundImage = `url("${vidStaticSource[randomStatic(0,5)]}"`;	
@@ -140,18 +126,6 @@ Source: https://stackoverflow.com/questions/58002958/is-there-any-workaround-or-
 Contributor: https://stackoverflow.com/users/11519208/taki7o7
 */	
 
-//var powerButton = document.getElementById('powerButton');
-//powerButton.addEventListener('click',()=>{
-//	if (!crtState){
-//		crtState = true;
-//		powerButton.setAttribute('style',"background-image: url('Resources/on-state-switch.png')");
-//		window.requestAnimationFrame(opening);
-//	} else {
-//		crtState = false;
-//		powerButton.setAttribute('style',"background-image: url('Resources/off-state-switch.png')");
-//		window.requestAnimationFrame(closing);		
-//	}
-//})
 	
 var powerButton = document.getElementById('powerButton');
 powerButton.addEventListener('click', powerButtonSwitch)	
@@ -222,7 +196,6 @@ function closing3(){
 function closing4(){
 	animateHeight -= 0.2;
 	animateWidth -= 0.2;
-//	console.log(`${animateHeight}, ${animateWidth}`);
 	initialAnimation.style.width = `${animateWidth}%`;
 	initialAnimation.style.height = `${animateHeight}%`;
 	if (animateWidth < 0){
@@ -241,29 +214,13 @@ function closing4(){
 var knob1 = document.getElementsByClassName('knob-1')[0];
 var knob1Counter = 0;	
 	
-//function knobRotate() {
-//	knob1Counter += 45;
-//	console.log(knob1Counter)
-//	if (knob1Counter == 360) {
-//		knob1Counter = 0;
-//	}
-//	knob1.style.transform = `rotate(${knob1Counter}deg)`;
-//}
-//knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 
 
 	
 /*animation for knob-2*/	
 var knob2 = document.getElementsByClassName('knob-2')[0];
 var knob2Counter = 0;
-//function knobRotate2() {
-//	knob2Counter += 45;
-//	if (knob2Counter == 360) {
-//		knob2Counter = 0;
-//	}
-//	knob2.style.transform = `rotate(${knob2Counter}deg)`;
-//}
-//knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})	
+
 	
 
 	
@@ -295,7 +252,6 @@ function crtPagesToggle() {
 	if (toShow == -1) {
 		audioStatic.play();
 		knobSound.play();
-//		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
 		staticIframe();
 		vidStatic.classList.toggle('hide');		
@@ -306,12 +262,10 @@ function crtPagesToggle() {
 			vidStatic.classList.toggle('hide');			
 			crtPages[0].classList.toggle('hide');
 			knob1.addEventListener('click', crtPagesToggle);
-//			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
 		},200);		
 	}else if(toShow == crtPages.length-1) {
 		audioStatic.play();
 		knobSound.play();
-//		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
 		crtPages[toShow].classList.toggle('hide');
 		staticIframe();
@@ -323,13 +277,11 @@ function crtPagesToggle() {
 			vidStatic.classList.toggle('hide');			
 			crtPages[0].classList.toggle('hide');
 			knob1.addEventListener('click', crtPagesToggle);
-//			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
 		},200);
 					
 	}else {
 		audioStatic.play();
 		knobSound.play();
-//		knob1.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate)});
 		knob1.removeEventListener('click', crtPagesToggle);
 		crtPages[toShow].classList.toggle('hide');
 		staticIframe();
@@ -341,7 +293,6 @@ function crtPagesToggle() {
 			vidStatic.classList.toggle('hide');		
 			crtPages[toShow + 1].classList.toggle('hide');
 			knob1.addEventListener('click', crtPagesToggle);
-//			knob1.addEventListener('click',function(){window.requestAnimationFrame(knobRotate)});	
 		},200)
 
 	}
@@ -372,7 +323,6 @@ function crtProjectsToggle() {
 	if (toShow == -1) {
 		audioStatic.play();
 		knobSound.play();		
-//		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
 		knob2.removeEventListener('click', crtProjectsToggle);
 		staticIframe();
 		vidStatic.classList.toggle('hide');			
@@ -383,12 +333,10 @@ function crtProjectsToggle() {
 			vidStatic.classList.toggle('hide');			
 			crtProjects[0].classList.toggle('hide');
 			knob2.addEventListener('click', crtProjectsToggle);	
-//			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
 		},200);		
 	}else if(toShow == crtProjects.length-1) {
 		audioStatic.play();
 		knobSound.play();		
-//		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
 		knob2.removeEventListener('click', crtProjectsToggle);
 		crtProjects[toShow].classList.toggle('hide');
 		staticIframe();
@@ -400,13 +348,11 @@ function crtProjectsToggle() {
 			vidStatic.classList.toggle('hide');			
 			crtProjects[0].classList.toggle('hide');
 			knob2.addEventListener('click', crtProjectsToggle);
-//			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})			
 		},200);
 				
 	}else {
 		audioStatic.play();
 		knobSound.play();		
-//		knob2.removeEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
 		knob2.removeEventListener('click', crtProjectsToggle);
 		crtProjects[toShow].classList.toggle('hide');
 		staticIframe();
@@ -418,12 +364,8 @@ function crtProjectsToggle() {
 			vidStatic.classList.toggle('hide');			
 			crtProjects[toShow + 1].classList.toggle('hide');
 			knob2.addEventListener('click', crtProjectsToggle);	
-//			knob2.addEventListener('click',function(){window.requestAnimationFrame(knobRotate2)})		
 		},200);		
 	}
 }	
-// add this after the opening animation to enable knob animations.
-//knob1.addEventListener('click', crtPagesToggle);
-//knob2.addEventListener('click', crtProjectsToggle);
 	
 }
