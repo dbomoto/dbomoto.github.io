@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="mainCSS.css">
+<title>Daniel Omoto's Portfolio</title>
+	
+<!--BASE temporarily disabled, brackets editor uses dbomoto.github.io JS file instead of the one I am currently working on-->
+	
+<!--<base href="https://dbomoto.github.io/" target="_blank">-->
+	
+	
+<meta charset="UTF-8">
+<meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, SCSS, jQuery, React, Redux, Web Developer ">
+<meta name="description" content="Daniel Omoto Portflio">
+<meta name="author" content="Daniel Benedict L. Omoto">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+</head>
+<body>
+	<div id='container'>
+		<div class='background'>
+<!--elements inside background will be locked to its dimension-->
+
+			<div class="pages"></div>
+			<div class="projects"></div>
+			<div class="knob-1"></div>
+			<div class="knob-2"></div>
+			<div id='powerButton'></div>
+		</div>
+		<div class="crt-container">
+			<div class="follow-background">
+
+				<audio id="audioStatic">
+					<source src='/Resources/mixkit-short-static-noise-1456.mp3' type="audio/mpeg" >
+				</audio>
+				<audio id='knob-sound'>
+					<source src="Resources/knob-sound-trimmed.mp3" type="audio/mpeg">
+				</audio>
+				<audio id="switch-sound">
+					<source src="/Resources/Light-Switch-On-Off-06-m-trimmed.mp3" type="audio/mpeg">
+				</audio>
+				<div class="animation-container1">
+					<div class="initial-animation"></div>
+					<div  class="static-gif hide">
+					</div>
+					
+				</div>
+				<div class="crt-pages about hide">
+					<h1>ABOUT ME</h1>
+				</div>
+				<div class="crt-pages skills hide">
+					<h1>LANGUAGES</h1>		
+					<h1>FRAMEWORKS</h1>		
+				</div>
+				<div class="crt-pages certificates hide">
+					<h1>CERTIFICATES</h1>				
+				</div>
+				<div class="crt-pages contact hide">
+					<h1>CONTACT ME</h1>				
+				</div>
+				<div class="crt-projects project1 hide">
+					<h1>PROJECT1</h1>
+				</div>
+				<div class="crt-projects project2 hide">
+					<h1>PROJECT2</h1>
+				</div>
+				<div class="crt-projects project3 hide">
+					<h1>PROJECT3</h1>
+				</div>
+				<div class="crt-projects project4 hide">
+					<h1>PROJECT4</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h1 class="under-dev">THIS MEDIA QUERY UNDER DEVELOPMENT</h1>
+	
+<script src="mainJS.js"></script>
+</body>
+</html>
