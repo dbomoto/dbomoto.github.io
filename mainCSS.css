@@ -1,4 +1,8 @@
-﻿/* CSS RESET STYLE */
+﻿/* ============
+
+CSS RESET STYLE 
+
+=============== */
 * {
   margin: 0;
   padding: 0;
@@ -7,23 +11,45 @@
 
 
 
-/* CLEARFIX HACK */
+/* ===============
+
+CLEARFIX HACK 
+
+================= */
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
 }
 
+/* ===============
+
+GLOBAL STYLES
+
+================= */
+
 body {
 	font-size: 16px;
 }
+
+/* ============================
+
+JAVASCRIPT TO ASSIGN CSS VALUES
+
+================================ */
 
 :root {
 	/* aspect ratio is 14:9 WxH, let javascript detect width and height of
 	viewport and adjust tvWidth and tvHeight values accordingly*/
 	--tvWidth: 1000px;
-	--tvHeight: 643px
+	--tvHeight: 643px;
 }
+
+/* ============================
+
+CONTAINER FOR WHOLE PAGE
+
+================================ */
 
 #container {
 	width: 100vw;
@@ -50,6 +76,12 @@ body {
 } */
 
 /*vvvvvv TEST vvvvvvv */
+
+/* 	.background,.follow-background {
+		width: 1200px;
+		height: 771px;		
+	} 
+	 */
 
 .background {
 	background-image: url(/Resources/background-img.png);
