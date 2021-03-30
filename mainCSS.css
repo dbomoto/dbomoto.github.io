@@ -1,4 +1,17 @@
-﻿/* ============
+﻿/* ============================
+
+JAVASCRIPT TO ASSIGN CSS VALUES
+
+================================ */
+
+:root {
+	/* aspect ratio is 14:9 WxH, let javascript detect width and height of
+	viewport and adjust tvWidth and tvHeight values accordingly*/
+	--tvWidth: 1000px;
+	--tvHeight: 643px;
+}
+
+/* ============
 
 CSS RESET STYLE 
 
@@ -32,18 +45,7 @@ body {
 	font-size: 16px;
 }
 
-/* ============================
 
-JAVASCRIPT TO ASSIGN CSS VALUES
-
-================================ */
-
-:root {
-	/* aspect ratio is 14:9 WxH, let javascript detect width and height of
-	viewport and adjust tvWidth and tvHeight values accordingly*/
-	--tvWidth: 1000px;
-	--tvHeight: 643px;
-}
 
 /* ============================
 
@@ -332,17 +334,17 @@ h1{
 
 
 @media only screen and (max-width: 320px) {
-	.under-dev {
+	/* .under-dev {
 		display: block;
 	}
 	.container {
 		display: none;
-	}
+	} */
 }
 
 /*320px and up*/
 @media only screen and (min-width: 320px) {
-	.background,.follow-background  {
+	/* .background,.follow-background  {
 		width: 300px;
 		height: 206px;		
 	}
@@ -377,13 +379,13 @@ h1{
 	.static-gif {
 		width: 180px;
 		height: 143px;
-	}	
+	}	 */
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 /*maybe change the image for background from here downwards*/
 @media only screen and (min-width: 600px) {
-	.background,.follow-background  {
+	/* .background,.follow-background  {
 		width: 600px;
 		height: 386px;		
 	}
@@ -416,12 +418,12 @@ h1{
 	.static-gif {
 		width: 340px;
 		height: 270px;
-	}
+	} */
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-	.background,.follow-background  {
+	/* .background,.follow-background  {
 		width: 768px;
 		height: 494px;		
 	}	
@@ -453,12 +455,12 @@ h1{
 	.static-gif {
 		width: 440px;
 		height: 349px;
-	}	
+	}	 */
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-	.background,.follow-background {
+	/* .background,.follow-background {
 		width: 992px;
 		height: 638px;		
 	}	
@@ -490,7 +492,7 @@ h1{
 	.static-gif {
 		width: 565px;
 		height: 449px;
-	}	
+	}	 */
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -504,7 +506,7 @@ h1{
 	} */
 
  /*vvv TEST vvv */
-	.background,.follow-background {
+	/* .background,.follow-background {
 		width: 1200px;
 		height: 771px;		
 	} 
@@ -536,7 +538,7 @@ h1{
 	.static-gif {
 		width: 685px;
 		height: 544px;
-	}
+	} */
 	
 /*
 	.static-vid {
