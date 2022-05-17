@@ -1,6 +1,6 @@
 # dbomoto.github.io
 
-#This repository is intended for my portfolio to be used for job application.
+# This page serves as my portfolio to be used as a reference for my services offered, projects made, and testimonials from customers.
 
-#Regards
-#Daniel Benedict L. Omoto
+# Daniel Benedict L. Omoto
+# Web Developer

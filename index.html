@@ -1,90 +1,386 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
-<link rel="stylesheet" href="mainCSS.css">
-<title>Daniel Omoto's Portfolio</title>
-	
-<!--BASE temporarily disabled, brackets editor uses dbomoto.github.io JS file instead of the one I am currently working on-->
-	
-<!--<base href="https://dbomoto.github.io/" target="_blank">-->
-	
-	
-<meta charset="UTF-8">
-<meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, SCSS, jQuery, React, Redux, Web Developer ">
-<meta name="description" content="Daniel Omoto Portflio">
-<meta name="author" content="Daniel Benedict L. Omoto">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<title>DBOWebDev</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="My portfolio website, services, projects, and product testimonials. " />
+	<meta name="author" content="Daniel Benedict L. Omoto" />
+	<meta name="keywords"
+		content="keywordsdeveloper, designer, portfolio, website, webapp, front-end, back-end, full-stack" />
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<base href="/">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="scripts.js"></script>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
-	<div id='container'>
-		<div class='background'>
-<!--elements inside background will be locked to its dimension-->
 
-			<div class="pages"></div>
-			<div class="projects"></div>
-			<div class="knob-1"></div>
-			<div class="knob-2"></div>
-			<div id='powerButton'></div>
-		</div>
-<!-- find a way to load all resources, in other computer the static effects 
-won't show immediately on the get go, it shows up on my work computer
-because it was saved or cached in the browser -->
-
-<!-- make a separate portfolio style for mobile phones below, current 
-portfolio is not ideal for phones. except for tablets -->
-
-		<!-- temporarily disable crt-container for code experiment -->
-		
-		<!-- <div class="crt-container">
-			<div class="follow-background">
-
-				<audio id="audioStatic">
-					<source src='/Resources/mixkit-short-static-noise-1456.mp3' type="audio/mpeg" >
-				</audio>
-				<audio id='knob-sound'>
-					<source src="Resources/knob-sound-trimmed.mp3" type="audio/mpeg">
-				</audio>
-				<audio id="switch-sound">
-					<source src="/Resources/Light-Switch-On-Off-06-m-trimmed.mp3" type="audio/mpeg">
-				</audio>
-				<div class="animation-container1">
-					<div class="initial-animation"></div>
-					<div  class="static-gif hide">
-					</div>
-					
-				</div>
-				<div class="crt-pages about hide">
-					<h1>ABOUT ME</h1>
-				</div>
-				<div class="crt-pages skills hide">
-					<h1>LANGUAGES</h1>		
-					<h1>FRAMEWORKS</h1>		
-				</div>
-				<div class="crt-pages certificates hide">
-					<h1>CERTIFICATES</h1>				
-				</div>
-				<div class="crt-pages contact hide">
-					<h1>CONTACT ME</h1>				
-				</div>
-				<div class="crt-projects project1 hide">
-					<h1>PROJECT1</h1>
-				</div>
-				<div class="crt-projects project2 hide">
-					<h1>PROJECT2</h1>
-				</div>
-				<div class="crt-projects project3 hide">
-					<h1>PROJECT3</h1>
-				</div>
-				<div class="crt-projects project4 hide">
-					<h1>PROJECT4</h1>
-				</div>
+<body class-“flex flex-col”>
+	<!--counter = 23-->
+	<div class="max-w-7xl relative m-auto">
+		<header class="flex flex-col justify-between
+	sm:flex-row pt-4
+	">
+			<div id="home" class="flex flex-row justify-between md:px-10">
+				<div class="bg-green-200 
+			w-[64px] h-[64px]">LOGO ICN</div>
+				<div class="bg-green-200 
+			w-[64px] h-[64px]
+			sm:hidden" onclick="toggleClass('#menu',['h-fit','pt-3','pb-3'])">MENU ICN</div>
 			</div>
-		</div> -->
+
+			<nav class="
+		flex flex-col justify-center relative md:pr-10">
+				<ul id="menu" class="bg-orange-500 sm:bg-transparent flex flex-col overflow-hidden space-y-3 h-0 order-last
+			transition-all ease-in-out sm:place-items-center 
+			sm:flex-row sm:h-full sm:space-y-0 sm:mr-3 sm:space-x-4 
+			sm:mt-0 sm:mb-0 absolute top-0 w-full sm:static rounded-bl-lg rounded-br-lg">
+					<li>
+						<a href="#about" tabindex="1">
+							<div
+								class="flex flex-row space-x-1 ml-1 text-xl tracking-wider group font-mono sm:flex-row-reverse relative">
+								<div class="w-0 h-[32px] bg-green-200 overflow-hidden
+							group-hover:w-[32px]  transition-all ease-in-out z-10 sm:mx-1
+							ml-3">ICN</div>
+								<p class="z-10 group-active:text-orange-500">Hello human!</p>
+								<div
+									class="absolute z-0 translate-x-full  transition-all ease-out group-active:w-fit sm:group-active:w-full group-active:h-full group-active:bg-black group-active:translate-x-0 group-active:-skew-x-12">
+									<span class="text-transparent">ICN Hello human!</span></div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#portfolio" tabindex="2">
+							<div
+								class="flex flex-row space-x-1 ml-1 text-xl tracking-wider group font-mono sm:flex-row-reverse relative">
+								<div class="w-0 h-[32px] bg-green-200 overflow-hidden
+							group-hover:w-[32px]  transition-all ease-in-out z-10 sm:mx-1
+							ml-3">ICN</div>
+								<p class="z-10 group-active:text-orange-500">Portfolio</p>
+								<div
+									class="absolute z-0 translate-x-full  transition-all ease-out group-active:w-fit sm:group-active:w-full group-active:h-full group-active:bg-black group-active:translate-x-0 group-active:-skew-x-12">
+									<span class="text-transparent">ICN Portfolio</span></div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#contact" tabindex="3">
+							<div
+								class="flex flex-row space-x-1 ml-1 text-xl tracking-wider group font-mono sm:flex-row-reverse relative">
+								<div class="w-0 h-[32px] bg-green-200 overflow-hidden
+							group-hover:w-[32px] transition-all ease-in-out z-10 sm:mx-1
+							ml-3">ICN</div>
+								<p class="z-10 group-active:text-orange-500">Get in touch</p>
+								<div
+									class="absolute z-0 translate-x-full  transition-all ease-out group-active:w-fit sm:group-active:w-full group-active:h-full group-active:bg-black group-active:translate-x-0 group-active:-skew-x-12">
+									<span class="text-transparent">ICN Get in touch</span></div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+
+		<main role="main" class="flex flex-col">
+			<section data-role="hero" class="
+		h-fit flex flex-col place-items-center justify-center
+		px-4 sm:px-6 md:px-10 space-y-8 py-24 sm:space-y-12 sm:py-44">
+				<h1
+					class="leading-relaxed sm:leading-relaxed md:leading-relaxed font-mono text-4xl sm:text-5xl md:text-5xl text-center tracking-wider">
+					Full-stack Developer, Designer, & Teacher</h1>
+				<p class="leading-relaxed sm:leading-relaxed md:leading-relaxed text-center font-sans text-xl sm:text-3xl tracking-wide 
+			text-[20px]">From simple personal websites or web app, to teaching your child to make their first website. </p>
+				<div class="bg-green-200 w-full h-64 sm:h-96">ME</div>
+			</section>
+
+			<section data-role="about" class="
+		py-24 sm:py-44 px-4 sm:px-6 space-y-8 sm:space-y-12 text-center md:px-12 bg-orange-500">
+				<h2 id="about" class="text-3xl sm:text-4xl tracking-wide">Hi! I'm Daniel. Pleased to meet you.</h2>
+				<div class="text-xl sm:text-2xl tracking-wide leading-relaxed sm:leading-relaxed md:leading-relaxed">
+					<p>I used to be an Engineer working in the industry until I decided to pursue my passion for coding
+						and art. I constantly strive to better myself in my profession and value </p>
+					<div class="flex flex-col sm:flex-row w-fit m-auto space-y-2 sm:space-y-0 sm:space-x-2">
+						<div
+							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
+							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">HONESTY</div>
+							<span class="text-orange-500 z-10 px-3 py-1">HONESTY,</span>
+						</div>
+						<div
+							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
+							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">DISCIPLINE,</div>
+							<span class="text-orange-500 z-10 px-3 py-1">DISCIPLINE,</span>
+						</div>
+						<div
+							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
+							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">AND SIMPLICITY</div>
+							<span class="text-orange-500 z-10 px-3 py-1">AND SIMPLICITY</span>
+						</div>
+					</div>
+					<p>
+						I love working with small businesses as it lets me talk directly to the owner, bringing their
+						ideas and character into the development of the project. Teaching is also a form of
+						self-improvement and I am happy to share my knowledge with future developers.
+					</p>
+				</div>
+			</section>
+
+			<section data-role="services" class="
+		py-24 sm:py-44 px-4 sm:px-6 md:px-10 space-y-8 sm:space-y-28
+		flex flex-col">
+				<div>
+					<h2 class="text-3xl sm:text-4xl tracking-wide text-center my-10 sm:my-0">Here's what I can offer:
+					</h2>
+					<div></div>
+				</div>
+				<div class="
+			flex flex-col lg:flex-row w-full space-y-16 items-center lg:h-[720px]
+			lg:space-y-0 lg:space-x-8">
+					<div class="text-center
+				space-y-8 p-8 border-8 border-black rounded-2xl w-96 lg:w-96 lg:h-full shadow-lg shadow-orange-500/80">
+						<div class="w-[64px] h-[64px] bg-green-200 m-auto">ICN</div>
+						<h3
+							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
+							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">Full-stack Developer</div>
+							<span class="text-orange-500 z-10 px-3 py-1">Full-stack Developer</span>
+						</h3>
+						<p class="text-lg sm:text-xl">I can develop static/dynamic sites, single-page applications, and
+							web apps that require databases.</p>
+						<p class=" text-xl sm:text-2xl font-semibold">Tool Set:</p>
+						<ul class="text-lg sm:text-xl">
+							<!--Add popper descriptions for these tools-->
+							<li>HTML5</li>
+							<li>TailwindCSS</li>
+							<li>Typescript</li>
+							<li>Node</li>
+							<li>MongoDB</li>
+							<li>EJS</li>
+							<li>Other Libaries</li>
+						</ul>
+					</div>
+					<div class="text-center
+				space-y-8 p-8 border-8 border-black rounded-2xl
+				w-96 lg:w-96 lg:h-full shadow-lg shadow-orange-500/80">
+						<div class="w-[64px] h-[64px] bg-green-200 m-auto">ICN</div>
+						<h3
+							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
+							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">Animations</div>
+							<span class="text-orange-500 z-10 py-1">Animations</span>
+						</h3>
+						<p class="text-lg sm:text-xl"><abbr title="Scalable Vector Graphics">SVG's</abbr> and Animations
+							are the ones I enjoy the most. Taking abstract ideas from my customers and turning them into
+							art.</p>
+						<p class=" text-xl sm:text-2xl font-semibold">Design Tools:</p>
+						<ul class="text-lg sm:text-xl">
+							<li>AnimeJS</li>
+							<li>Inkscape</li>
+							<li>SVG Animation</li>
+							<li>Tailwind Animations</li>
+						</ul>
+					</div>
+					<div class="text-center
+				space-y-8 p-8 border-8 border-black rounded-2xl
+				w-96 lg:w-96 lg:h-full shadow-lg shadow-orange-500/80">
+						<div class="w-[64px] h-[64px] bg-green-200 m-auto">ICN</div>
+						<h3
+							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
+							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">Teacher / Mentor</div>
+							<span class="text-orange-500 z-10 py-1">Teacher / Mentor</span>
+						</h3>
+						<p class="text-lg sm:text-xl">I am a self-taught developer, so I know how difficult it is
+							without a mentor. Whether if it's a child or an adult, if they are willing to learn, I will
+							teach them.</p>
+						<p class=" text-xl sm:text-2xl font-semibold">Teaching Materials:</p>
+						<ul class="text-lg sm:text-xl">
+							<li>Replit</li>
+							<li>Online Resources</li>
+							<li>Voice / Video Call</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section data-role="portfolio" class="
+		py-24 sm:py-44 px-4 sm:px-6 md:px-10 space-y-8
+		flex flex-col place-items-center">
+				<h2 id="portfolio" class="text-3xl sm:text-4xl tracking-wide text-center my-8 sm:my-8 md:my-8 lg:my-8">
+					My Recent Works</h2>
+				<div class="flex flex-row flex-wrap justify-center gap-6">
+					<!--The whole card is a link to a sample or website.-->
+					<a href="#">
+						<div
+							class="w-64 h-80 overflow-hidden relative group border-4 border-black rounded-lg m-8 shadow-lg shadow-orange-500/80">
+							<div
+								class=" flex flex-col justify-center text-center group absolute group-hover:-translate-y-80 transition-all ease-in-out">
+								<div class="w-full h-80 flex flex-col place-items-center justify-around space-y-1 p-2">
+									<div class="bg-green-200 w-44 h-44">IMG</div>
+									<h2 class="text-xl"><abbr
+											title="Philippine Institute of Certified Public Accountants">PICPA</abbr>
+										Email Newsletters.</h2>
+									<p class="text-lg">Newsletters for their activites during the quarter.</p>
+								</div>
+								<div data-role="testimonial"
+									class="flex flex-col justify-evenly place-items-center w-full h-80 p-2">
+									<div class="w-[90px] h-[90px] bg-green-200 rounded-full
+							ring-4 ring-rose-900"></div>
+									<div class="space-y-1">
+										<p>Message</p>
+										<p>Gemma Corbo/President</p>
+										<p>PICPA Ormoc/Biliran Chapter</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<!--Next work here-->
+					<a href="#">
+						<div
+							class="w-64 h-80 overflow-hidden relative group border-4 border-black rounded-lg m-8 shadow-lg shadow-orange-500/80">
+							<div
+								class=" flex flex-col justify-center text-center group absolute group-hover:-translate-y-80 transition-all ease-in-out">
+								<div class="w-full h-80 flex flex-col place-items-center justify-around space-y-1 p-2">
+									<div class="bg-green-200 w-44 h-44">IMG</div>
+									<h2 class="text-xl"><abbr
+											title="Philippine Institute of Certified Public Accountants">PICPA</abbr>
+										Email Newsletters.</h2>
+									<p class="text-lg">Newsletters for their activites during the quarter.</p>
+								</div>
+								<div data-role="testimonial"
+									class="flex flex-col justify-evenly place-items-center w-full h-80 p-2">
+									<div class="w-[90px] h-[90px] bg-green-200 rounded-full
+							ring-4 ring-rose-900"></div>
+									<div class="space-y-1">
+										<p>Message</p>
+										<p>Gemma Corbo/President</p>
+										<p>PICPA Ormoc/Biliran Chapter</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<a href="#">
+						<div
+							class="w-64 h-80 overflow-hidden relative group border-4 border-black rounded-lg m-8 shadow-lg shadow-orange-500/80">
+							<div
+								class=" flex flex-col justify-center text-center group absolute group-hover:-translate-y-80 transition-all ease-in-out">
+								<div class="w-full h-80 flex flex-col place-items-center justify-around space-y-1 p-2">
+									<div class="bg-green-200 w-44 h-44">IMG</div>
+									<h2 class="text-xl"><abbr
+											title="Philippine Institute of Certified Public Accountants">PICPA</abbr>
+										Email Newsletters.</h2>
+									<p class="text-lg">Newsletters for their activites during the quarter.</p>
+								</div>
+								<div data-role="testimonial"
+									class="flex flex-col justify-evenly place-items-center w-full h-80 p-2">
+									<div class="w-[90px] h-[90px] bg-green-200 rounded-full
+							ring-4 ring-rose-900"></div>
+									<div class="space-y-1">
+										<p>Message</p>
+										<p>Gemma Corbo/President</p>
+										<p>PICPA Ormoc/Biliran Chapter</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</section>
+
+			<section data-role="projects" class="
+		py-24 sm:py-44 px-4 sm:px-6 md:px-10 space-y-24
+		flex flex-col place-items-center text-center">
+				<h2 class="text-3xl sm:text-4xl tracking-wide text-center my-8 sm:my-8 md:my-8 lg:my-8">My Personal
+					Projects</h2>
+				<div class="flex flex-col place-items-center space-y-8 sm:flex-row sm:space-y-0 sm:items-start">
+					<div class="w-64 h-56 bg-green-200 grow-0 shrink-0"></div>
+					<div class="flex flex-col space-y-2 sm:text-left sm:mx-5">
+						<h3 class="text-xl sm:text-2xl">Tailwind Editor</h3>
+						<p>An online editor with TailwindCSS autocompletion. Generated CSS is already the compiled
+							version with the minimum classes needed by the page. It uses Ace as its text editor with a
+							preview pane beside it to see the changes in real-time.</p>
+						<p>Status: Active</p>
+						<a href="#">View app</a>
+					</div>
+				</div>
+				<div class="flex flex-col place-items-center space-y-8 sm:flex-row-reverse sm:space-y-0 sm:items-start">
+					<div class="w-64 h-56 bg-green-200 grow-0 shrink-0"></div>
+					<div class="flex flex-col space-y-2 sm:text-right sm:mx-5">
+						<h3 class="text-xl sm:text-2xl">Quizer App</h3>
+						<p>A quiz app for students, specifically for engineering students, that comes with a solution.
+							You can add sujects, questions and their answers and save it to the database for later use.
+						</p>
+						<p>Status: Active</p>
+						<a href="#">View app</a>
+					</div>
+				</div>
+				<div class="flex flex-col place-items-center space-y-8 sm:flex-row sm:space-y-0 sm:items-start">
+					<div class="w-64 h-56 bg-green-200 grow-0 shrink-0"></div>
+					<div class="flex flex-col space-y-2 sm:text-left sm:mx-5">
+						<h3 class="text-xl sm:text-2xl">Animation Library</h3>
+						<p>A library of my animations using plain CSS, Tailwind, AnimeJS, and SVG's. I also create
+							custom SVG's using Inkscape.</p>
+						<p>Status: Active</p>
+						<a href="#">View library</a>
+					</div>
+				</div>
+				<div
+					class="flex flex-col place-items-center space-y-8 sm:flex-row-reverse sm:space-y-0  sm:items-start">
+					<div class="w-64 h-56 bg-green-200 grow-0 shrink-0"></div>
+					<div class="flex flex-col space-y-2 sm:text-right sm:mx-5">
+						<h3 class="text-xl sm:text-2xl">Mock Websites</h3>
+						<p>A collection of all the websites that I made for reference. This includes landing pages, job
+							recruitement forms, portfolios, and events.</p>
+						<p>Status: Active</p>
+						<a href="#">View collection</a>
+					</div>
+				</div>
+			</section>
+
+			<section data-role="call-to-action" class="
+		py-24 sm:py-44 px-4 sm:px-6 md:px-10 space-y-24
+		flex flex-col place-items-center text-center">
+				<h2 id="contact" class="text-3xl sm:text-4xl tracking-wide">Have a project in mind?</h2>
+				<p class="text-xl sm:text-2xl tracking-wide leading-relaxed sm:leading-relaxed md:leading-relaxed">My
+					prices are negotiable, and dependent on what kind of project you want and the challenges that comes
+					with it. Let's talk it over a cup of coffee.</p>
+				<button
+					class="bg-yellow-200 py-5 px-10 rounded-full border-2 border-black text-2xl visited: hover: active:">It's
+					Go Time</button>
+			</section>
+		</main>
+
+		<a href="#home">
+			<div data-role="home" class="w-[64px] h-[64px] bg-green-200 fixed bottom-3 right-3 z-10">HOME</div>
+		</a>
+
+		<footer class="py-5 px-4 sm:px-6 md:px-10 flex flex-col place-items-center text-center space-y-3">
+			<div class="bg-green-200 w-[64px] h-[64px]">LOGO ICN</div>
+			<p class="text-2xl p-10">The tree will never grow if you don't plant it today.</p>
+			<div
+				class="flex flex-row flex-wrap h-48 md:w-4/6 w-full md:justify-around justify-center gap-6 md:gap-0 md:space-x-0 md:space-y-0 items-center bg-red-200">
+				<div class="bg-green-200 w-[64px] h-[64px]">GITHUB</div>
+				<div class="bg-green-200 w-[64px] h-[64px] overflow-hidden">ONLINEJOBSPH</div>
+				<div class="bg-green-200 w-[64px] h-[64px]">FIVERR</div>
+				<div class="bg-green-200 w-[64px] h-[64px]">EMAIL</div>
+			</div>
+			<p>All rights reserved &copy; Daniel Benedict L. Omoto</p>
+			<p>Made with <a href="https://tailwindcss.com/">TailwindCSS</a> and &#10084;</p>
+			<p>Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a></p>
+		</footer>
+
+		<!-- <script>
+			// element - css selector
+			// classes - array of classes to toggle
+			function toggleClass(element, classes) {
+				let domElement = document.querySelector(element)
+				// console.log(element,classes)
+				classes.forEach(show => domElement.classList.toggle(show))
+			}
+		</script> -->
 	</div>
-	<!-- <h1 class="under-dev">THIS MEDIA QUERY UNDER DEVELOPMENT</h1> -->
-	
-<script src="mainJS.js"></script>
-<script src="mainJSv2.js"></script>
 </body>
+
 </html>
