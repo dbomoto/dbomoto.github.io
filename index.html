@@ -1,386 +1,664 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="">
 
 <head>
-	<title>DBOWebDev</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="My portfolio website, services, projects, and product testimonials. " />
-	<meta name="author" content="Daniel Benedict L. Omoto" />
-	<meta name="keywords"
-		content="keywordsdeveloper, designer, portfolio, website, webapp, front-end, back-end, full-stack" />
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<base href="/">
-	<script src="https://cdn.tailwindcss.com"></script>
-	<script src="scripts.js"></script>
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="utf-12">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="My portfolio website, services, projects, and product testimonials. " />
+  <meta name="author" content="Daniel Benedict L. Omoto" />
+  <meta name="keywords"
+    content="keywordsdeveloper, designer, portfolio, website, webapp, front-end, back-end, full-stack" />
+  <title>dbo web dev</title>
+  <!-- 
+  JQUERY UI
+  dont' use jquery theme for now, only its functions, opt to using tailwind for themes.
+  -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/a8d6f229b3.js" crossorigin="anonymous"></script>
+
+  <!-- TAILWIND CONFIG -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            "primary": {
+              "100": "#FB9C89",
+              "200": "#E57C66",
+              "300": "#CF6048",
+              "400": "#B9482D",
+              "500": "#A33318",
+            },
+            "secondary": {
+              "100": "#0B82F1",
+              "200": "#1D77CC",
+              "300": "#2869A7",
+              "400": "#2B5882",
+              "500": "#28435D",
+            },
+            "accent": {
+              "100": "#9BC53D",
+              "200": "#809F3A",
+              "300": "#647A33",
+              "400": "#465428",
+              "500": "#272E19",
+            },
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ROOT CSS -->
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body class-“flex flex-col”>
-	<!--counter = 23-->
-	<div class="max-w-7xl relative m-auto">
-		<header class="flex flex-col justify-between
-	sm:flex-row pt-4
-	">
-			<div id="home" class="flex flex-row justify-between md:px-10">
-				<div class="bg-green-200 
-			w-[64px] h-[64px]">LOGO ICN</div>
-				<div class="bg-green-200 
-			w-[64px] h-[64px]
-			sm:hidden" onclick="toggleClass('#menu',['h-fit','pt-3','pb-3'])">MENU ICN</div>
-			</div>
+<body class="text-[16px] relative
+bg-primary-100/50
+dark:bg-black dark:text-white/90 transition-all
+">
 
-			<nav class="
-		flex flex-col justify-center relative md:pr-10">
-				<ul id="menu" class="bg-orange-500 sm:bg-transparent flex flex-col overflow-hidden space-y-3 h-0 order-last
-			transition-all ease-in-out sm:place-items-center 
-			sm:flex-row sm:h-full sm:space-y-0 sm:mr-3 sm:space-x-4 
-			sm:mt-0 sm:mb-0 absolute top-0 w-full sm:static rounded-bl-lg rounded-br-lg">
-					<li>
-						<a href="#about" tabindex="1">
-							<div
-								class="flex flex-row space-x-1 ml-1 text-xl tracking-wider group font-mono sm:flex-row-reverse relative">
-								<div class="w-0 h-[32px] bg-green-200 overflow-hidden
-							group-hover:w-[32px]  transition-all ease-in-out z-10 sm:mx-1
-							ml-3">ICN</div>
-								<p class="z-10 group-active:text-orange-500">Hello human!</p>
-								<div
-									class="absolute z-0 translate-x-full  transition-all ease-out group-active:w-fit sm:group-active:w-full group-active:h-full group-active:bg-black group-active:translate-x-0 group-active:-skew-x-12">
-									<span class="text-transparent">ICN Hello human!</span></div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="#portfolio" tabindex="2">
-							<div
-								class="flex flex-row space-x-1 ml-1 text-xl tracking-wider group font-mono sm:flex-row-reverse relative">
-								<div class="w-0 h-[32px] bg-green-200 overflow-hidden
-							group-hover:w-[32px]  transition-all ease-in-out z-10 sm:mx-1
-							ml-3">ICN</div>
-								<p class="z-10 group-active:text-orange-500">Portfolio</p>
-								<div
-									class="absolute z-0 translate-x-full  transition-all ease-out group-active:w-fit sm:group-active:w-full group-active:h-full group-active:bg-black group-active:translate-x-0 group-active:-skew-x-12">
-									<span class="text-transparent">ICN Portfolio</span></div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="#contact" tabindex="3">
-							<div
-								class="flex flex-row space-x-1 ml-1 text-xl tracking-wider group font-mono sm:flex-row-reverse relative">
-								<div class="w-0 h-[32px] bg-green-200 overflow-hidden
-							group-hover:w-[32px] transition-all ease-in-out z-10 sm:mx-1
-							ml-3">ICN</div>
-								<p class="z-10 group-active:text-orange-500">Get in touch</p>
-								<div
-									class="absolute z-0 translate-x-full  transition-all ease-out group-active:w-fit sm:group-active:w-full group-active:h-full group-active:bg-black group-active:translate-x-0 group-active:-skew-x-12">
-									<span class="text-transparent">ICN Get in touch</span></div>
-							</div>
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+<!-- BACKGROUND SVG -->
+  <svg height="100%" width="100%" class="absolute 
+  dark:grayscale dark:brightness-50 dark:contrast-200">
+    <defs>
+      <pattern id="doodad" width="98" height="98" viewBox="0 0 40 40" patternUnits="userSpaceOnUse"
+        patternTransform="rotate(30)">
+        <rect width="100%" height="100%" fill="rgba(251, 156, 137,1)" />
+        <path d="M0 2h40v36h-40z" fill="rgba(229, 124, 102,1)" filter="url(#filter-doodad-1)" />
+        <path
+          d="M-40 2h1.54l12 18l-12 18h-1.54l12-18zM-36.92 2h1.54l12 18l-12 18h-1.54l12-18zM-33.85 2h1.54l12 18l-12 18h-1.54l12-18zM-30.77 2h1.54l12 18l-12 18h-1.54l12-18zM-27.69 2h1.54l12 18l-12 18h-1.54l12-18zM-24.62 2h1.54l12 18l-12 18h-1.54l12-18zM-21.54 2h1.54l12 18l-12 18h-1.54l12-18zM-18.46 2h1.54l12 18l-12 18h-1.54l12-18zM-15.38 2h1.54l12 18l-12 18h-1.54l12-18zM-12.31 2h1.54l12 18l-12 18h-1.54l12-18zM-9.23 2h1.54l12 18l-12 18h-1.54l12-18zM-6.15 2h1.54l12 18l-12 18h-1.54l12-18zM-3.08 2h1.54l12 18l-12 18h-1.54l12-18zM0 2h1.54l12 18l-12 18h-1.54l12-18zM3.08 2h1.54l12 18l-12 18h-1.54l12-18zM6.15 2h1.54l12 18l-12 18h-1.54l12-18zM9.23 2h1.54l12 18l-12 18h-1.54l12-18zM12.31 2h1.54l12 18l-12 18h-1.54l12-18zM15.38 2h1.54l12 18l-12 18h-1.54l12-18zM18.46 2h1.54l12 18l-12 18h-1.54l12-18zM21.54 2h1.54l12 18l-12 18h-1.54l12-18zM24.62 2h1.54l12 18l-12 18h-1.54l12-18zM27.69 2h1.54l12 18l-12 18h-1.54l12-18zM30.77 2h1.54l12 18l-12 18h-1.54l12-18zM33.85 2h1.54l12 18l-12 18h-1.54l12-18zM36.92 2h1.54l12 18l-12 18h-1.54l12-18z"
+          fill="rgba(251, 156, 137,1)" filter="url(#filter-doodad-2)" />
+      </pattern>
+      <filter id="filter-doodad-1">
+        <feTurbulence baseFrequency="0.01 0" numOctaves="2" result="result1" />
+        <feDisplacementMap in2="result1" scale="9" result="result2" xChannelSelector="R" yChannelSelector="G"
+          in="SourceGraphic" />
+        <feComposite in2="result2" in="SourceGraphic" operator="atop" result="compositeGraphic" />
+        <feOffset in="compositeGraphic" result="fbSourceGraphic" dx="-0.9" />
+      </filter>
+      <filter id="filter-doodad-2">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" />
+      </filter>
+    </defs>
+    <rect fill="url(#doodad)" height="200%" width="200%" />
+  </svg>
+
+  <div class="flex flex-col m-auto relative items-center">
+
+    <!-- GUIDE -->
+    <div class="self-start">
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      sm:hidden">
+        <p class="text-center">Mobile</p>
+      </div>
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      md:hidden sm:flex hidden">
+        <p class="text-center">SM 640px</p>
+      </div>
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      lg:hidden md:flex hidden">
+        <p class="text-center">MD 768px</p>
+      </div>
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      xl:hidden lg:flex hidden">
+        <p class="text-center">LG 1024px</p>
+      </div>
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      2xl:hidden xl:flex hidden">
+        <p class="text-center">XL 1280px</p>
+      </div>
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      2xl:flex hidden">
+        <p class="text-center">2XL 1536px</p>
+      </div>
+
+      <div
+        class="bg-orange-500 
+      w-24 h-10 flex flex-row justify-center items-center rounded-md border-2 border-slate-800 fixed mt-32 ml-5 opacity-80">
+        <p class="text-center landscape:hidden">PORTRAIT</p>
+        <p class="text-center portrait:hidden">LANDSCAPE</p>
+      </div>
+
+      <div
+        class="text-black bg-white dark:text-white dark:bg-black
+      w-24 h-10 flex flex-row justify-center items-center rounded-md border-2 border-slate-800 fixed mt-44 ml-5 opacity-80">
+        <p class="text-center dark:hidden">LIGHT</p>
+        <p class="text-center hidden dark:block">DARK</p>
+      </div>
+    </div>
 
 
-		<main role="main" class="flex flex-col">
-			<section data-role="hero" class="
-		h-fit flex flex-col place-items-center justify-center
-		px-4 sm:px-6 md:px-10 space-y-8 py-24 sm:space-y-12 sm:py-44">
-				<h1
-					class="leading-relaxed sm:leading-relaxed md:leading-relaxed font-mono text-4xl sm:text-5xl md:text-5xl text-center tracking-wider">
-					Full-stack Developer, Designer, & Teacher</h1>
-				<p class="leading-relaxed sm:leading-relaxed md:leading-relaxed text-center font-sans text-xl sm:text-3xl tracking-wide 
-			text-[20px]">From simple personal websites or web app, to teaching your child to make their first website. </p>
-				<div class="bg-green-200 w-full h-64 sm:h-96">ME</div>
-			</section>
+    <!-- NAVIGATION -->
+    <nav id="home" class="
+    flex-row w-full h-16 justify-between px-5 items-center hidden 
+    sm:flex
+    bg-primary-100
+    z-10
+    dark:bg-black
+    ">
+      <img class="w-fit h-fit dark:brightness-200
+      dark:contrast-150" src="/images/logo-no-background.png">
+      <ul class="list-none flex flex-row space-x-4 sm:text-xl font-mono font-bold
+      sm:space-x-2">
+        <!-- <a href="#home" class="group relative overflow-hidden 
+        transition-all hover:dark:ring-[1px] hover:dark:ring-white hover:dark:rounded-md
+        hover:dark:ring-offset-2 border-2 border-transparent">
+          <li class="
+        underline underline-offset-4 px-2 group-hover:text-white
+        ">
+            Home
+          </li>
+          <div class="w-full h-full bg-secondary-300 transition-all 
+          group-hover:-translate-x-0 -z-10 absolute -translate-y-full  translate-x-full
+          dark:hidden
+          "></div>
+        </a> -->
+        <a href="#about" class="group relative overflow-hidden
+        transition-all hover:dark:ring-[1px] hover:dark:ring-white hover:dark:rounded-md
+        hover:dark:ring-offset-2 border-2 border-transparent">
+          <li class="
+        underline underline-offset-4 px-2 group-hover:text-white
+        ">
+            About Me
+          </li>
+          <div class="w-full h-full bg-secondary-300 transition-all 
+          group-hover:-translate-x-0 -z-10 absolute -translate-y-full  translate-x-full
+          dark:hidden"></div>
+        </a>
+        <a href="#projects" class="group relative overflow-hidden
+        transition-all hover:dark:ring-[1px] hover:dark:ring-white hover:dark:rounded-md
+        hover:dark:ring-offset-2 border-2 border-transparent">
+          <li class="
+        underline underline-offset-4 px-2 group-hover:text-white
+        ">
+            Projects
+          </li>
+          <div class="w-full h-full bg-secondary-300 transition-all 
+          group-hover:-translate-x-0 -z-10 absolute -translate-y-full  translate-x-full
+          dark:hidden"></div>
+        </a>
+        <a href="#contact" class="group relative overflow-hidden
+        transition-all hover:dark:ring-[1px] hover:dark:ring-white hover:dark:rounded-md
+        hover:dark:ring-offset-2 border-2 border-transparent">
+          <li class="
+        underline underline-offset-4 px-2 group-hover:text-white
+        ">
+            Contact
+          </li>
+          <div class="w-full h-full bg-secondary-300 transition-all 
+          group-hover:-translate-x-0 -z-10 absolute -translate-y-full  translate-x-full
+          dark:hidden"></div>
+        </a>
 
-			<section data-role="about" class="
-		py-24 sm:py-44 px-4 sm:px-6 space-y-8 sm:space-y-12 text-center md:px-12 bg-orange-500">
-				<h2 id="about" class="text-3xl sm:text-4xl tracking-wide">Hi! I'm Daniel. Pleased to meet you.</h2>
-				<div class="text-xl sm:text-2xl tracking-wide leading-relaxed sm:leading-relaxed md:leading-relaxed">
-					<p>I used to be an Engineer working in the industry until I decided to pursue my passion for coding
-						and art. I constantly strive to better myself in my profession and value </p>
-					<div class="flex flex-col sm:flex-row w-fit m-auto space-y-2 sm:space-y-0 sm:space-x-2">
-						<div
-							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
-							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">HONESTY</div>
-							<span class="text-orange-500 z-10 px-3 py-1">HONESTY,</span>
-						</div>
-						<div
-							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
-							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">DISCIPLINE,</div>
-							<span class="text-orange-500 z-10 px-3 py-1">DISCIPLINE,</span>
-						</div>
-						<div
-							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
-							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">AND SIMPLICITY</div>
-							<span class="text-orange-500 z-10 px-3 py-1">AND SIMPLICITY</span>
-						</div>
-					</div>
-					<p>
-						I love working with small businesses as it lets me talk directly to the owner, bringing their
-						ideas and character into the development of the project. Teaching is also a form of
-						self-improvement and I am happy to share my knowledge with future developers.
-					</p>
-				</div>
-			</section>
+      </ul>
+    </nav>
 
-			<section data-role="services" class="
-		py-24 sm:py-44 px-4 sm:px-6 md:px-10 space-y-8 sm:space-y-28
-		flex flex-col">
-				<div>
-					<h2 class="text-3xl sm:text-4xl tracking-wide text-center my-10 sm:my-0">Here's what I can offer:
-					</h2>
-					<div></div>
-				</div>
-				<div class="
-			flex flex-col lg:flex-row w-full space-y-16 items-center lg:h-[720px]
-			lg:space-y-0 lg:space-x-8">
-					<div class="text-center
-				space-y-8 p-8 border-8 border-black rounded-2xl w-96 lg:w-96 lg:h-full shadow-lg shadow-orange-500/80">
-						<div class="w-[64px] h-[64px] bg-green-200 m-auto">ICN</div>
-						<h3
-							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
-							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">Full-stack Developer</div>
-							<span class="text-orange-500 z-10 px-3 py-1">Full-stack Developer</span>
-						</h3>
-						<p class="text-lg sm:text-xl">I can develop static/dynamic sites, single-page applications, and
-							web apps that require databases.</p>
-						<p class=" text-xl sm:text-2xl font-semibold">Tool Set:</p>
-						<ul class="text-lg sm:text-xl">
-							<!--Add popper descriptions for these tools-->
-							<li>HTML5</li>
-							<li>TailwindCSS</li>
-							<li>Typescript</li>
-							<li>Node</li>
-							<li>MongoDB</li>
-							<li>EJS</li>
-							<li>Other Libaries</li>
-						</ul>
-					</div>
-					<div class="text-center
-				space-y-8 p-8 border-8 border-black rounded-2xl
-				w-96 lg:w-96 lg:h-full shadow-lg shadow-orange-500/80">
-						<div class="w-[64px] h-[64px] bg-green-200 m-auto">ICN</div>
-						<h3
-							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
-							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">Animations</div>
-							<span class="text-orange-500 z-10 py-1">Animations</span>
-						</h3>
-						<p class="text-lg sm:text-xl"><abbr title="Scalable Vector Graphics">SVG's</abbr> and Animations
-							are the ones I enjoy the most. Taking abstract ideas from my customers and turning them into
-							art.</p>
-						<p class=" text-xl sm:text-2xl font-semibold">Design Tools:</p>
-						<ul class="text-lg sm:text-xl">
-							<li>AnimeJS</li>
-							<li>Inkscape</li>
-							<li>SVG Animation</li>
-							<li>Tailwind Animations</li>
-						</ul>
-					</div>
-					<div class="text-center
-				space-y-8 p-8 border-8 border-black rounded-2xl
-				w-96 lg:w-96 lg:h-full shadow-lg shadow-orange-500/80">
-						<div class="w-[64px] h-[64px] bg-green-200 m-auto">ICN</div>
-						<h3
-							class="text-xl sm:text-2xl font-semibold w-auto m-auto relative flex flex-col place-items-center">
-							<div class="bg-black -skew-x-12 top-0 absolute z-0 px-3 py-1">Teacher / Mentor</div>
-							<span class="text-orange-500 z-10 py-1">Teacher / Mentor</span>
-						</h3>
-						<p class="text-lg sm:text-xl">I am a self-taught developer, so I know how difficult it is
-							without a mentor. Whether if it's a child or an adult, if they are willing to learn, I will
-							teach them.</p>
-						<p class=" text-xl sm:text-2xl font-semibold">Teaching Materials:</p>
-						<ul class="text-lg sm:text-xl">
-							<li>Replit</li>
-							<li>Online Resources</li>
-							<li>Voice / Video Call</li>
-						</ul>
-					</div>
-				</div>
-			</section>
+    <nav class="
+    flex flex-row w-full h-16 justify-between px-5 items-center relative text-xl font-mono font-bold
+    sm:hidden
+    bg-primary-100
+    z-20
+    dark:bg-black
+    ">
+      <img class="w-fit h-fit dark:brightness-200
+      dark:contrast-150" src="/images/logo-no-background.png">
+      <button id="menuButton" class="
+      underline underline-offset-4
+      ">MENU</button>
+      <ul id="menu" class="absolute top-16 right-0 text-right w-full hidden
+      space-y-3 py-3 dark:bg-black">
+        <!-- <li class="dark:bg-black">
+          <a href="#about">
+            <div data-menu="item" class="pr-5 
+            underline underline-offset-4
+            ">About</div>
+          </a>
+        </li> -->
+        <li class="dark:bg-black">
+          <a href="#about">
+            <div data-menu="item" class="pr-5
+            underline underline-offset-4
+            ">About Me</div>
+          </a>
+        </li>
+        <li class="dark:bg-black">
+          <a href="#projects">
+            <div data-menu="item" class="pr-5
+            underline underline-offset-4
+            ">Projects</div>
+          </a>
+        </li>
+        <li class="dark:bg-black">
+          <a href="#contact">
+            <div data-menu="item" class="pr-5
+            underline underline-offset-4
+            ">Contact</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-			<section data-role="portfolio" class="
-		py-24 sm:py-44 px-4 sm:px-6 md:px-10 space-y-8
-		flex flex-col place-items-center">
-				<h2 id="portfolio" class="text-3xl sm:text-4xl tracking-wide text-center my-8 sm:my-8 md:my-8 lg:my-8">
-					My Recent Works</h2>
-				<div class="flex flex-row flex-wrap justify-center gap-6">
-					<!--The whole card is a link to a sample or website.-->
-					<a href="#">
-						<div
-							class="w-64 h-80 overflow-hidden relative group border-4 border-black rounded-lg m-8 shadow-lg shadow-orange-500/80">
-							<div
-								class=" flex flex-col justify-center text-center group absolute group-hover:-translate-y-80 transition-all ease-in-out">
-								<div class="w-full h-80 flex flex-col place-items-center justify-around space-y-1 p-2">
-									<div class="bg-green-200 w-44 h-44">IMG</div>
-									<h2 class="text-xl"><abbr
-											title="Philippine Institute of Certified Public Accountants">PICPA</abbr>
-										Email Newsletters.</h2>
-									<p class="text-lg">Newsletters for their activites during the quarter.</p>
-								</div>
-								<div data-role="testimonial"
-									class="flex flex-col justify-evenly place-items-center w-full h-80 p-2">
-									<div class="w-[90px] h-[90px] bg-green-200 rounded-full
-							ring-4 ring-rose-900"></div>
-									<div class="space-y-1">
-										<p>Message</p>
-										<p>Gemma Corbo/President</p>
-										<p>PICPA Ormoc/Biliran Chapter</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
+    <!-- HERO -->
+    <!-- <div class="flex flex-col m-auto relative items-center
+bg-[url('/images/florian-olivo-Ek9Znm8lQ1U-unsplash-tinypng.jpg')] bg-center
+bg-no-repeat bg-cover w-full bg-primary-100/80 bg-blend-screen">
+      <div id="about" class="
+      max-w-screen-2xl
+      flex flex-col justify-center space-y-10 items-center px-8 font-sans
+      portrait:h-screen
+      landscape:h-[900px]
+      backdrop-blur-sm
+      rounded-full
+      ">
+        <div class="bg-yellow-500 
+        w-52 h-52 "></div>
+        <h1 class="sm:text-6xl text-4xl font-semibold
+        bg-secondary-100/80 p-8
+        fancyBorder">Hello there!</h1>
+        <p class="text-center max-w-prose text-2xl leading-10 tracking-wide">I am Daniel, a self-taught web developer. If you need a website done, I'm your guy. Have a look around my works and projects while your here.</p>
+        <div class="text-3xl flex flex-col text-secondary-200 overflow-hidden py-5">
+          <i class="fa-solid fa-chevron-down chev3"></i>
+          <i class="fa-solid fa-chevron-down chev2"></i>
+          <i class="fa-solid fa-chevron-down chev1"></i>
+        </div>
+      </div>
+</div> -->
 
-					<!--Next work here-->
-					<a href="#">
-						<div
-							class="w-64 h-80 overflow-hidden relative group border-4 border-black rounded-lg m-8 shadow-lg shadow-orange-500/80">
-							<div
-								class=" flex flex-col justify-center text-center group absolute group-hover:-translate-y-80 transition-all ease-in-out">
-								<div class="w-full h-80 flex flex-col place-items-center justify-around space-y-1 p-2">
-									<div class="bg-green-200 w-44 h-44">IMG</div>
-									<h2 class="text-xl"><abbr
-											title="Philippine Institute of Certified Public Accountants">PICPA</abbr>
-										Email Newsletters.</h2>
-									<p class="text-lg">Newsletters for their activites during the quarter.</p>
-								</div>
-								<div data-role="testimonial"
-									class="flex flex-col justify-evenly place-items-center w-full h-80 p-2">
-									<div class="w-[90px] h-[90px] bg-green-200 rounded-full
-							ring-4 ring-rose-900"></div>
-									<div class="space-y-1">
-										<p>Message</p>
-										<p>Gemma Corbo/President</p>
-										<p>PICPA Ormoc/Biliran Chapter</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
+    <div id="home" class="
+    max-w-screen-2xl my-10
+    flex flex-col justify-center space-y-10 items-center px-8 font-sans
+    portrait:h-screen
+    landscape:h-[900px]
+    relative
+    ">
+      <div class="absolute w-full h-full [clip-path:polygon(25%_0%,70%_0%,40%_35%,95%_35%,20%_100%,40%_55%,0%_55%)]
+      bg-[url('/images/florian-olivo-Ek9Znm8lQ1U-unsplash-tinypng.jpg')] bg-right
+      bg-primary-100/40 bg-blend-screen z-0
+      "></div>
+      <div class="bg-[url('/images/profile_v2.jpg')] 
+      w-52 h-52 z-10 bg-cover rounded-full 
+      ">
+        <div id="ringAnimation" class="outline-8 outline-dashed outline-offset-8 outline-secondary-400
+        w-full h-full rounded-full
+        dark:outline-secondary-100 dark:brightness-100"></div>
+      </div>
+      <h1 class="sm:text-6xl text-4xl font-semibold
+      bg-secondary-100/80 p-8 z-10
+      fancyBorder">Hello there!</h1>
+      <p class="text-center max-w-prose text-3xl leading-10 tracking-wide font-semibold z-10">I am Daniel, a self-taught
+        web developer. If you need a website done, I'm your guy. Have a look around my works and projects while your
+        here.</p>
+      <div class="text-3xl flex flex-col text-secondary-200 overflow-hidden py-5 z-10
+      dark:text-secondary-100 dark:brightness-150">
+        <i class="fa-solid fa-chevron-down chev3"></i>
+        <i class="fa-solid fa-chevron-down chev2"></i>
+        <i class="fa-solid fa-chevron-down chev1"></i>
+      </div>
+    </div>
 
-					<a href="#">
-						<div
-							class="w-64 h-80 overflow-hidden relative group border-4 border-black rounded-lg m-8 shadow-lg shadow-orange-500/80">
-							<div
-								class=" flex flex-col justify-center text-center group absolute group-hover:-translate-y-80 transition-all ease-in-out">
-								<div class="w-full h-80 flex flex-col place-items-center justify-around space-y-1 p-2">
-									<div class="bg-green-200 w-44 h-44">IMG</div>
-									<h2 class="text-xl"><abbr
-											title="Philippine Institute of Certified Public Accountants">PICPA</abbr>
-										Email Newsletters.</h2>
-									<p class="text-lg">Newsletters for their activites during the quarter.</p>
-								</div>
-								<div data-role="testimonial"
-									class="flex flex-col justify-evenly place-items-center w-full h-80 p-2">
-									<div class="w-[90px] h-[90px] bg-green-200 rounded-full
-							ring-4 ring-rose-900"></div>
-									<div class="space-y-1">
-										<p>Message</p>
-										<p>Gemma Corbo/President</p>
-										<p>PICPA Ormoc/Biliran Chapter</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-			</section>
 
-			<section data-role="projects" class="
-		py-24 sm:py-44 px-4 sm:px-6 md:px-10 space-y-24
-		flex flex-col place-items-center text-center">
-				<h2 class="text-3xl sm:text-4xl tracking-wide text-center my-8 sm:my-8 md:my-8 lg:my-8">My Personal
-					Projects</h2>
-				<div class="flex flex-col place-items-center space-y-8 sm:flex-row sm:space-y-0 sm:items-start">
-					<div class="w-64 h-56 bg-green-200 grow-0 shrink-0"></div>
-					<div class="flex flex-col space-y-2 sm:text-left sm:mx-5">
-						<h3 class="text-xl sm:text-2xl">Tailwind Editor</h3>
-						<p>An online editor with TailwindCSS autocompletion. Generated CSS is already the compiled
-							version with the minimum classes needed by the page. It uses Ace as its text editor with a
-							preview pane beside it to see the changes in real-time.</p>
-						<p>Status: Active</p>
-						<a href="#">View app</a>
-					</div>
-				</div>
-				<div class="flex flex-col place-items-center space-y-8 sm:flex-row-reverse sm:space-y-0 sm:items-start">
-					<div class="w-64 h-56 bg-green-200 grow-0 shrink-0"></div>
-					<div class="flex flex-col space-y-2 sm:text-right sm:mx-5">
-						<h3 class="text-xl sm:text-2xl">Quizer App</h3>
-						<p>A quiz app for students, specifically for engineering students, that comes with a solution.
-							You can add sujects, questions and their answers and save it to the database for later use.
-						</p>
-						<p>Status: Active</p>
-						<a href="#">View app</a>
-					</div>
-				</div>
-				<div class="flex flex-col place-items-center space-y-8 sm:flex-row sm:space-y-0 sm:items-start">
-					<div class="w-64 h-56 bg-green-200 grow-0 shrink-0"></div>
-					<div class="flex flex-col space-y-2 sm:text-left sm:mx-5">
-						<h3 class="text-xl sm:text-2xl">Animation Library</h3>
-						<p>A library of my animations using plain CSS, Tailwind, AnimeJS, and SVG's. I also create
-							custom SVG's using Inkscape.</p>
-						<p>Status: Active</p>
-						<a href="#">View library</a>
-					</div>
-				</div>
-				<div
-					class="flex flex-col place-items-center space-y-8 sm:flex-row-reverse sm:space-y-0  sm:items-start">
-					<div class="w-64 h-56 bg-green-200 grow-0 shrink-0"></div>
-					<div class="flex flex-col space-y-2 sm:text-right sm:mx-5">
-						<h3 class="text-xl sm:text-2xl">Mock Websites</h3>
-						<p>A collection of all the websites that I made for reference. This includes landing pages, job
-							recruitement forms, portfolios, and events.</p>
-						<p>Status: Active</p>
-						<a href="#">View collection</a>
-					</div>
-				</div>
-			</section>
+    <div id="about" class="w-full h-48 text-center sm:text-4xl text-2xl font-sans font-medium
+    grid place-items-center">
+      <h2 class="bg-secondary-100/80 p-8
+      fancyBorder">ABOUT ME</h2>
+    </div>
 
-			<section data-role="call-to-action" class="
-		py-24 sm:py-44 px-4 sm:px-6 md:px-10 space-y-24
-		flex flex-col place-items-center text-center">
-				<h2 id="contact" class="text-3xl sm:text-4xl tracking-wide">Have a project in mind?</h2>
-				<p class="text-xl sm:text-2xl tracking-wide leading-relaxed sm:leading-relaxed md:leading-relaxed">My
-					prices are negotiable, and dependent on what kind of project you want and the challenges that comes
-					with it. Let's talk it over a cup of coffee.</p>
-				<button
-					class="bg-yellow-200 py-5 px-10 rounded-full border-2 border-black text-2xl visited: hover: active:">It's
-					Go Time</button>
-			</section>
-		</main>
+    <!-- ABOUT ME -->
+    <div class="flex flex-col m-auto relative items-center w-full
+">
+      <div class="
+      max-w-screen-2xl
+      flex flex-col items-center space-y-32 py-28 h-fit font-sans
+      md:flex-row md:justify-around md:flex-wrap md:items-end md:px-8 md:space-y-0 md:gap-24
+      z-10
+      ">
 
-		<a href="#home">
-			<div data-role="home" class="w-[64px] h-[64px] bg-green-200 fixed bottom-3 right-3 z-10">HOME</div>
-		</a>
+        <div class="
+        w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+        border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
+        shadow-lg shadow-primary-400/90
+        transition-all hover:scale-110 duration-150 hover:ring-8
+        dark:bg-slate-800 dark:ring-primary-400/90
+        flex flex-col justify-between">
+          <div class=" 
+          w-64 h-56 mx-auto
+          text-9xl flex items-center justify-center">
+            <i class="fa-regular fa-clock text-secondary-300"></i>
+          </div>
+          <h1 class="text-xl font-medium">Disciplined</h1>
+          <p class="text-lg">Constant practice and application is needed for programming even for just an hour a day.
+            This was my mentality when I was learning web development, gaining the skills I needed through my own initiative.
+          </p>
+        </div>
 
-		<footer class="py-5 px-4 sm:px-6 md:px-10 flex flex-col place-items-center text-center space-y-3">
-			<div class="bg-green-200 w-[64px] h-[64px]">LOGO ICN</div>
-			<p class="text-2xl p-10">The tree will never grow if you don't plant it today.</p>
-			<div
-				class="flex flex-row flex-wrap h-48 md:w-4/6 w-full md:justify-around justify-center gap-6 md:gap-0 md:space-x-0 md:space-y-0 items-center bg-red-200">
-				<div class="bg-green-200 w-[64px] h-[64px]">GITHUB</div>
-				<div class="bg-green-200 w-[64px] h-[64px] overflow-hidden">ONLINEJOBSPH</div>
-				<div class="bg-green-200 w-[64px] h-[64px]">FIVERR</div>
-				<div class="bg-green-200 w-[64px] h-[64px]">EMAIL</div>
-			</div>
-			<p>All rights reserved &copy; Daniel Benedict L. Omoto</p>
-			<p>Made with <a href="https://tailwindcss.com/">TailwindCSS</a> and &#10084;</p>
-			<p>Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a></p>
-		</footer>
+        <div class="
+        w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+        border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
+        shadow-lg shadow-primary-400/90
+        transition-all hover:scale-110 duration-150 hover:ring-8
+        dark:bg-slate-800 dark:ring-primary-400/90
+        flex flex-col justify-between">
+          <div class=" 
+          w-64 h-56 mx-auto
+          text-9xl flex items-center justify-center">
+            <i class="fa-solid fa-book text-secondary-300"></i>
+          </div>
+          <h1 class="text-xl font-medium">Resourceful</h1>
+          <p class="text-lg">I had to be careful and creative in looking for the resources
+            needed for my study. I have explored everywhere, stackoverflow, tutorials, free seminars, documentations, you name it.
+          </p>
+        </div>
 
-		<!-- <script>
-			// element - css selector
-			// classes - array of classes to toggle
-			function toggleClass(element, classes) {
-				let domElement = document.querySelector(element)
-				// console.log(element,classes)
-				classes.forEach(show => domElement.classList.toggle(show))
-			}
-		</script> -->
-	</div>
+        <div class="
+        w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+        border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
+        shadow-lg shadow-primary-400/90
+        transition-all hover:scale-110 duration-150 hover:ring-8
+        dark:bg-slate-800 dark:ring-primary-400/90
+        flex flex-col justify-between">
+          <div class="
+          w-64 h-56 mx-auto
+          text-9xl flex items-center justify-center">
+            <i class="fa-regular fa-lightbulb text-secondary-300"></i>
+          </div>
+          <h1 class="text-xl font-medium">Simple</h1>
+          <p class="text-lg">I believe simplicity is best when it comes to making websites and applications.
+            Showing just enough information to get your message through the visitor.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div id="projects" class="w-full h-48 text-center sm:text-4xl text-2xl font-sans font-medium
+    grid place-items-center">
+      <h2 class="bg-secondary-100/80 p-8
+      fancyBorder">PROJECTS</h2>
+    </div>
+
+
+    <!-- PROJECTS -->
+    <div class="
+    max-w-screen-2xl
+    flex flex-col items-center space-y-32 py-28 h-fit font-sans
+    md:flex-row md:justify-around md:flex-wrap md:items-end md:px-8 md:space-y-0 md:gap-24
+    ">
+      <a href="https://Quizer.danielbenedictb.repl.co" target="_blank">
+        <div class="
+        w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+        border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
+        shadow-lg shadow-primary-400/90
+        transition-all hover:scale-110 duration-150 hover:ring-8
+        dark:bg-slate-800 dark:ring-primary-400/90
+        flex flex-col justify-between group">
+          <div class=" 
+          w-64 h-56 mx-auto bg-[url('/images/Quizer.png')] bg-cover
+          bg-no-repeat bg-center
+          rounded-tr-3xl rounded-bl-3xl rounded-tl-lg rounded-br-lg
+          group-hover:ring-4 border-2 border-slate-600"></div>
+          <h1 class="text-xl font-medium">Quizer</h1>
+          <p class="text-lg">From the name itself, it is a quiz app which records your score and displays it in the end.
+            It can also detect certain keyboard shortcut combinations related to the subject.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://Tailwind-Editor.danielbenedictb.repl.co" target="_blank">
+      <div class="
+      w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+      border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
+      shadow-lg shadow-primary-400/90
+      transition-all hover:scale-110 duration-150 hover:ring-8
+      dark:bg-slate-800 dark:ring-primary-400/90
+      flex flex-col justify-between group">
+        <div class=" 
+        w-64 h-56 mx-auto bg-[url('/images/tailwindEditor.png')] bg-cover
+        bg-no-repeat bg-center
+        rounded-tr-3xl rounded-bl-3xl rounded-tl-lg rounded-br-lg
+        group-hover:ring-4 border-2 border-slate-600"></div>
+          <h1 class="text-xl font-medium">Tailwind Editor</h1>
+          <p class="text-lg">Tailwind Editor lets you code HTML with TailwindCSS autocomplete and immediately see the results on the Live View section.
+          </p>
+        </div>
+      </a>
+
+      <div class="
+      w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+      border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
+      shadow-lg shadow-primary-400/90
+      transition-all hover:scale-110 duration-150 hover:ring-8
+      dark:bg-slate-800 dark:ring-primary-400/90
+      flex flex-col justify-between group">
+      <div class=" 
+      w-64 h-56 mx-auto bg-[url('/images/Portfolio.png')] bg-cover
+      bg-no-repeat bg-center
+      rounded-tr-3xl rounded-bl-3xl rounded-tl-lg rounded-br-lg
+      group-hover:ring-4 border-2 border-slate-600"></div>
+        <h1 class="text-xl font-medium">Portfolio</h1>
+        <span class="text-lg animate-bounce text-accent-400/80 font-bold">Whoah! Dejavu</span>
+        <p class="text-lg">This is the page that you are viewing right now.
+          It has dark mode, reduce motion, animations, and hyperlinks.
+        </p>
+      </div>
+
+
+    </div>
+
+
+    <div id="projects" class="w-full h-48 text-center sm:text-4xl text-2xl font-sans font-medium
+    grid place-items-center">
+      <h2 class="bg-secondary-100/80 p-8
+      fancyBorder">CONTACT</h2>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="
+  max-w-screen-2xl
+  flex py-28 flex-col place-items-center px-8 gap-y-16 font-sans 
+  ">
+
+      <p class="max-w-prose text-2xl text-center font-medium">Like what you see? Feel free to contact me through the channels below.</p>
+
+        <!-- CONTACT FORM - PENDING -->
+      <!-- <div class="
+      max-w-prose h-fit rounded-md border-2 border-black text-lg
+      bg-primary-100/60 backdrop-blur-sm
+      transition-all duration-150 hover:ring-8
+      dark:bg-slate-800 dark:ring-primary-400/90
+      shadow-lg shadow-primary-400/90">
+        <form
+          class="
+        grid grid-cols-2 grid-rows-[30px_50px_30px_50px_30px_150px_50px] grid-flow-row gap-y-4 gap-x-2 pb-8 pt-4 px-10">
+          <label for="firstName" class="font-medium row-start-1 row-end-2 col-start-1 col-span-1 self-center">First
+            Name:</label>
+          <input id="firstName" type="text" placeholder="John" class="
+          border-2 border-black rounded-md
+          row-start-2 row-end-2 col-start-1 col-span-1 pl-3 
+          placeholder:italic placeholder:text-secondary-100 placeholder:font-medium
+          caret-secondary-100
+          bg-primary-300/25 
+          focus:bg-white/80 focus:ring-2 focus:ring-4 focus:ring-offset-2 focus:ring-secondary-200
+          dark:placeholder:text-white dark:focus:text-black dark:focus:placeholder:text-secondary-100
+          ">
+          <label for="lastName" class="font-medium row-start-1 row-end-2 col-start-2 col-span-1 self-center">Last
+            Name:</label>
+          <input id="lastName" type="text" placeholder="Doe" class="
+          border-2 border-black rounded-md
+          row-start-2 row-end-2 col-start-2 col-span-1 pl-3 
+          placeholder:italic placeholder:text-secondary-100 placeholder:font-medium
+          caret-secondary-100
+          bg-primary-300/25 
+          focus:bg-white/80 focus:ring-2 focus:ring-4 focus:ring-offset-2 focus:ring-secondary-200
+          dark:placeholder:text-white dark:focus:text-black dark:focus:placeholder:text-secondary-100
+          ">
+          <label for="workEmail" class="font-medium row-start-3 row-end-3 col-start-1 col-span-2 self-center">Work
+            Email:</label>
+          <input id="workEmail" type="email" placeholder="JohnDoe@gmail.com" class="
+          border-2 border-black rounded-md
+          row-start-4 row-end-4 col-start-1 col-span-2 pl-3 
+          placeholder:italic placeholder:text-secondary-100 placeholder:font-medium
+          caret-secondary-100
+          bg-primary-300/25 
+          focus:bg-white/80 focus:ring-2 focus:ring-4 focus:ring-offset-2 focus:ring-secondary-200
+          dark:placeholder:text-white dark:focus:text-black dark:focus:placeholder:text-secondary-100
+          ">
+          <label for="message"
+            class="font-medium row-start-5 row-span-1 col-start-1 col-span-2 self-center">Message:</label>
+          <textarea id="message" placeholder="Place a small message here, and I'll contact you as soon as I can." class="
+          border-2 border-black rounded-md
+          row-start-6 row-end-6 col-start-1 col-span-2 p-5 
+          placeholder:italic placeholder:text-secondary-100 placeholder:font-medium
+          caret-secondary-100
+          bg-primary-300/25
+          focus:bg-white/80 focus:ring-2 focus:ring-4 focus:ring-offset-2 focus:ring-secondary-200
+          dark:placeholder:text-white dark:focus:text-black dark:focus:placeholder:text-secondary-100
+          resize-none
+          "></textarea>
+
+          <button type="submit" class="
+          transition-all
+          border-2 border-black rounded-md
+          col-span-2 row-start-7 text-2xl font-semibold hover:tracking-widest
+          bg-accent-200/80 hover:bg-accent-100/80 active:bg-accent-300
+          text-black">SUBMIT</button>
+        </form>
+      </div> -->
+
+      <ul class="
+      w-96 text-center space-y-12 mt-5">
+        <li class="group">
+          <a href="https://github.com/dbomoto" target="_blank" class="relative">
+            <i class="fa-brands fa-github text-5xl group-hover:-translate-y-12 transition-all
+            group-hover:text-secondary-300 duration-200"></i>
+            <p class="text-xl opacity-0 -translate-y-10
+            group-hover:opacity-100 transition-all duration-200">https://github.com/dbomoto</p>
+          </a>
+        </li>
+        <li class="group">
+          <a href="mailto:dbomoto@gmail.com" target="_blank" class="relative">
+            <i class="fa-brands fa-google text-5xl group-hover:-translate-y-12 transition-all
+            group-hover:text-secondary-300 duration-200"></i>
+            <p class="text-xl opacity-0 -translate-y-10
+            group-hover:opacity-100 transition-all duration-200">dbomoto@gmail.com</p>
+          </a>
+        </li>
+        <li class="group">
+          <a href="https://www.example.com" target="_blank" class="relative">
+            <i class="fa-brands fa-linkedin-in text-5xl group-hover:-translate-y-12 transition-all
+            group-hover:text-secondary-300 duration-200"></i>
+            <p class="text-xl opacity-0 -translate-y-10
+            group-hover:opacity-100 transition-all duration-200">https://www.example.com</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="w-full
+  flex flex-col text-center place-items-center py-20 space-y-5 px-5 font-mono
+  bg-primary-100
+  dark:bg-black">
+
+      <p class="text-lg">&copy; 2022 Daniel Benedict Omoto. All rights reserved</p>
+      <p>Photo by: <a
+        class="underline underline-offset-4"
+        href="https://unsplash.com/photos/Ek9Znm8lQ1U?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink00000000000000000"
+        target="_blank">Florian Olivo</a></p>
+      <p>Logo made using: <a
+        class="underline underline-offset-4" 
+        href="https://logo.com/" 
+        target="_blank">Logo.com</a></p>
+
+    </div>
+
+
+    <!-- ACCESIBILITY -->
+    <div class="fixed right-0 bottom-0 mr-5 mb-5 space-y-4 z-10 transition-all font-mono">
+      <a href="#home" class="grid place-items-center h-8 w-8">
+        <i class="fa-solid fa-arrow-up text-xl
+        hover:scale-125 peer"></i>
+        <p class="absolute right-10 invisible peer-hover:visible whitespace-nowrap">
+          Go up</p>
+      </a>
+      <div data-darkmode="no" class="grid place-items-center h-8 w-8 group">
+        <i class="fa-solid fa-moon text-xl
+        group-hover:scale-125"></i>
+        <p class="absolute right-10 invisible group-hover:visible whitespace-nowrap">
+          Dark Mode</p>
+      </div>
+      <div data-darkmode="yes" class="h-8 w-8 hidden relative group">
+        <i class="fa-solid fa-sun text-xl
+        group-hover:scale-125 absolute left-1.5 top-0.5"></i>
+        <p class="absolute right-10 top-0.5 invisible group-hover:visible whitespace-nowrap">
+          Light Mode</p>
+      </div>
+      <div data-reducemotion="no" class="grid place-items-center h-8 w-8 relative group">
+        <i class="fa-solid fa-gauge-simple 
+        group-hover:scale-125 text-xl"></i>
+        <p class="absolute right-10 top-26 invisible group-hover:visible whitespace-nowrap">
+          Reduce Motion</p>
+      </div>
+      <div data-reducemotion="yes" class="h-8 w-8 hidden group relative group">
+        <i class="fa-solid fa-gauge-simple-high  text-xl 
+        group-hover:scale-125 absolute left-1.5"></i>
+        <p class="absolute right-10 top-0.5 invisible group-hover:visible whitespace-nowrap">
+          Increase Motion</p>
+      </div>
+      <a href="https://github.com/dbomoto/dbomoto.github.io" target="_blank" class="grid place-items-center h-8 w-8">
+        <i class="fa-brands fa-github text-xl
+        hover:scale-125 peer"></i>
+        <p class="absolute right-10 invisible peer-hover:visible whitespace-nowrap">
+          Code for this project</p>
+      </a>      
+    </div>
+
+  </div>
+
+  <!-- JQUERY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+    integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"
+    integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- ANIME JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+    integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- ROOT JS -->
+  <script src="script.js"></script>
+
 </body>
 
 </html>

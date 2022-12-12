@@ -1,0 +1,4 @@
+/* JQUERY UI STYLE OVERWRITE */
+.ui-menu, .ui-menu-item {
+    background-color: #FB9C89;
+}
