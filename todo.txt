@@ -1,0 +1,5 @@
+1. main image is distored in smaller screen sizes.
+  sol. make the page responsive on much smaller screen sizes. 
+2. animations cause a lag in mobile phones.
+  sol. for mobile visitors or slower internet speed visitors, disable the animations.
+3. depending on scroll position. create a hover event on the cards.
