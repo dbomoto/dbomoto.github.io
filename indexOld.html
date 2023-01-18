@@ -18,15 +18,20 @@
   ">
   <meta name="author" content="Daniel Benedict L. Omoto">
   <title>dbo web dev</title>
+  <!-- 
+  JQUERY UI
+  dont' use jquery theme for now, only its functions, opt to using tailwind for themes.
+  -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
   <!-- TAILWIND -->
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- FONT AWESOME -->
   <script src="https://kit.fontawesome.com/a8d6f229b3.js" crossorigin="anonymous"></script>
 
   <!-- TAILWIND CONFIG -->
-  <!-- <script>
+  <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
@@ -60,7 +65,7 @@
         }
       }
     }
-  </script> -->
+  </script>
 
   <!-- ROOT CSS -->
   <link href="style.css" rel="stylesheet" type="text/css" />
@@ -100,6 +105,67 @@ dark:bg-black dark:text-white/90 transition-all
 
   <div class="flex flex-col m-auto relative items-center">
 
+    <!-- GUIDE -->
+    <!-- <div class="self-start">
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      sm:hidden">
+        <p class="text-center">Mobile</p>
+      </div>
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      md:hidden sm:flex hidden">
+        <p class="text-center">SM 640px</p>
+      </div>
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      lg:hidden md:flex hidden">
+        <p class="text-center">MD 768px</p>
+      </div>
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      xl:hidden lg:flex hidden">
+        <p class="text-center">LG 1024px</p>
+      </div>
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      2xl:hidden xl:flex hidden">
+        <p class="text-center">XL 1280px</p>
+      </div>
+
+      <div class="bg-orange-500 
+      w-20 h-10 flex flex-row justify-center 
+      items-center rounded-md border-2 border-slate-800 fixed mt-20 ml-5 opacity-80 
+      2xl:flex hidden">
+        <p class="text-center">2XL 1536px</p>
+      </div>
+
+      <div
+        class="bg-orange-500 
+      w-24 h-10 flex flex-row justify-center items-center rounded-md border-2 border-slate-800 fixed mt-32 ml-5 opacity-80">
+        <p class="text-center landscape:hidden">PORTRAIT</p>
+        <p class="text-center portrait:hidden">LANDSCAPE</p>
+      </div>
+
+      <div
+        class="text-black bg-white dark:text-white dark:bg-black
+      w-24 h-10 flex flex-row justify-center items-center rounded-md border-2 border-slate-800 fixed mt-44 ml-5 opacity-80">
+        <p class="text-center dark:hidden">LIGHT</p>
+        <p class="text-center hidden dark:block">DARK</p>
+      </div>
+    </div> -->
+
+
     <!-- NAVIGATION -->
     <nav id="home" class="
     flex-row w-full h-16 justify-between px-5 items-center hidden 
@@ -112,6 +178,19 @@ dark:bg-black dark:text-white/90 transition-all
       dark:contrast-150" src="/images/logo-no-background.png">
       <ul class="list-none flex flex-row space-x-4 sm:text-xl font-mono font-bold
       sm:space-x-2">
+        <!-- <a href="#home" class="group relative overflow-hidden 
+        transition-all hover:dark:ring-[1px] hover:dark:ring-white hover:dark:rounded-md
+        hover:dark:ring-offset-2 border-2 border-transparent">
+          <li class="
+        underline underline-offset-4 px-2 group-hover:text-white
+        ">
+            Home
+          </li>
+          <div class="w-full h-full bg-secondary-300 transition-all 
+          group-hover:-translate-x-0 -z-10 absolute -translate-y-full  translate-x-full
+          dark:hidden
+          "></div>
+        </a> -->
         <a href="#about" class="group relative overflow-hidden
         transition-all hover:dark:ring-[1px] hover:dark:ring-white hover:dark:rounded-md
         hover:dark:ring-offset-2 border-2 border-transparent">
@@ -159,13 +238,20 @@ dark:bg-black dark:text-white/90 transition-all
     z-20
     dark:bg-black
     ">
-      <img class="sm:w-fit sm:h-fit w-36 h-auto dark:brightness-200
+      <img class="w-fit h-fit dark:brightness-200
       dark:contrast-150" src="/images/logo-no-background.png">
       <button id="menuButton" class="
       underline underline-offset-4
       ">MENU</button>
       <ul id="menu" class="absolute top-16 right-0 text-right w-full hidden
       space-y-3 py-3 dark:bg-black">
+        <!-- <li class="dark:bg-black">
+          <a href="#about">
+            <div data-menu="item" class="pr-5 
+            underline underline-offset-4
+            ">About</div>
+          </a>
+        </li> -->
         <li class="dark:bg-black">
           <a href="#about">
             <div data-menu="item" class="pr-5
@@ -191,6 +277,31 @@ dark:bg-black dark:text-white/90 transition-all
     </nav>
 
     <!-- HERO -->
+    <!-- <div class="flex flex-col m-auto relative items-center
+bg-[url('/images/florian-olivo-Ek9Znm8lQ1U-unsplash-tinypng.jpg')] bg-center
+bg-no-repeat bg-cover w-full bg-primary-100/80 bg-blend-screen">
+      <div id="about" class="
+      max-w-screen-2xl
+      flex flex-col justify-center space-y-10 items-center px-8 font-sans
+      portrait:h-screen
+      landscape:h-[900px]
+      backdrop-blur-sm
+      rounded-full
+      ">
+        <div class="bg-yellow-500 
+        w-52 h-52 "></div>
+        <h1 class="sm:text-6xl text-4xl font-semibold
+        bg-secondary-100/80 p-8
+        fancyBorder">Hello there!</h1>
+        <p class="text-center max-w-prose text-2xl leading-10 tracking-wide">I am Daniel, a self-taught web developer. If you need a website done, I'm your guy. Have a look around my works and projects while your here.</p>
+        <div class="text-3xl flex flex-col text-secondary-200 overflow-hidden py-5">
+          <i class="fa-solid fa-chevron-down chev3"></i>
+          <i class="fa-solid fa-chevron-down chev2"></i>
+          <i class="fa-solid fa-chevron-down chev1"></i>
+        </div>
+      </div>
+</div> -->
+
     <div id="home" class="
     max-w-screen-2xl my-10
     flex flex-col justify-center space-y-10 items-center px-8 font-sans
@@ -198,17 +309,21 @@ dark:bg-black dark:text-white/90 transition-all
     landscape:h-[900px]
     relative
     ">
+      <!-- <div class="absolute w-full h-full [clip-path:polygon(25%_0%,70%_0%,40%_35%,95%_35%,20%_100%,40%_55%,0%_55%)]
+      bg-[url('/images/florian-olivo-Ek9Znm8lQ1U-unsplash-tinypng.jpg')] bg-right
+      bg-primary-100/40 bg-blend-screen z-0
+      "></div> -->
       <div class="bg-[url('/images/profile_v2.jpg')] 
-      sm:w-52 sm:h-52 z-10 bg-cover rounded-full w-40 h-40
+      w-52 h-52 z-10 bg-cover rounded-full 
       ">
         <div id="ringAnimation" class="outline-8 outline-dashed outline-offset-8 outline-secondary-400
         w-full h-full rounded-full
         dark:outline-secondary-100 dark:brightness-100"></div>
       </div>
-      <h1 class="sm:text-6xl text-3xl font-semibold
-      bg-secondary-100/80 sm:p-8 p-4 z-10
+      <h1 class="sm:text-6xl text-4xl font-semibold
+      bg-secondary-100/80 p-8 z-10
       fancyBorder">Hello there!</h1>
-      <p class="text-center max-w-prose text-2xl leading-10 tracking-wide font-semibold z-10">I am Daniel, a self-taught
+      <p class="text-center max-w-prose text-3xl leading-10 tracking-wide font-semibold z-10">I am Daniel, a self-taught
         web developer. If you need a website done, I'm your guy. Have a look around my works and projects while your
         here.</p>
       <div class="text-3xl flex flex-col text-secondary-200 overflow-hidden py-5 z-10
@@ -217,13 +332,14 @@ dark:bg-black dark:text-white/90 transition-all
         <i class="fa-solid fa-chevron-down chev2"></i>
         <i class="fa-solid fa-chevron-down chev1"></i>
       </div>
-    </div>    
-   
+    </div>
+
+
     <div id="about" class="w-full h-48 text-center sm:text-4xl text-2xl font-sans font-medium
     grid place-items-center">
       <h2 class="bg-secondary-100/80 p-8
       fancyBorder">ABOUT ME</h2>
-    </div>    
+    </div>
 
     <!-- ABOUT ME -->
     <div class="flex flex-col m-auto relative items-center w-full
@@ -236,12 +352,12 @@ dark:bg-black dark:text-white/90 transition-all
       ">
 
         <div class="
-        sm:w-80 w-72 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+        w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
         border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
         shadow-lg shadow-primary-400/90
         transition-all hover:scale-110 duration-150 hover:ring-8
         dark:bg-slate-800 dark:ring-primary-400/90
-        flex flex-col justify-between sm:scale-100 scale-75">
+        flex flex-col justify-between">
           <div class=" 
           w-64 h-56 mx-auto
           text-9xl flex items-center justify-center">
@@ -254,12 +370,12 @@ dark:bg-black dark:text-white/90 transition-all
         </div>
 
         <div class="
-        sm:w-80 w-72 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+        w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
         border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
         shadow-lg shadow-primary-400/90
         transition-all hover:scale-110 duration-150 hover:ring-8
         dark:bg-slate-800 dark:ring-primary-400/90
-        flex flex-col justify-between sm:scale-100 scale-75">
+        flex flex-col justify-between">
           <div class=" 
           w-64 h-56 mx-auto
           text-9xl flex items-center justify-center">
@@ -272,12 +388,12 @@ dark:bg-black dark:text-white/90 transition-all
         </div>
 
         <div class="
-        sm:w-80 w-72 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+        w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
         border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
         shadow-lg shadow-primary-400/90
         transition-all hover:scale-110 duration-150 hover:ring-8
         dark:bg-slate-800 dark:ring-primary-400/90
-        flex flex-col justify-between sm:scale-100 scale-75">
+        flex flex-col justify-between">
           <div class="
           w-64 h-56 mx-auto
           text-9xl flex items-center justify-center">
@@ -292,11 +408,13 @@ dark:bg-black dark:text-white/90 transition-all
       </div>
     </div>
 
+
     <div id="projects" class="w-full h-48 text-center sm:text-4xl text-2xl font-sans font-medium
     grid place-items-center">
       <h2 class="bg-secondary-100/80 p-8
       fancyBorder">PROJECTS</h2>
     </div>
+
 
     <!-- PROJECTS -->
     <div class="
@@ -306,20 +424,18 @@ dark:bg-black dark:text-white/90 transition-all
     ">
       <a href="https://Quizer.danielbenedictb.repl.co" target="_blank">
         <div class="
-        sm:w-80 w-72 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+        w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
         border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
         shadow-lg shadow-primary-400/90
         transition-all hover:scale-110 duration-150 hover:ring-8
         dark:bg-slate-800 dark:ring-primary-400/90
-        flex flex-col justify-between group sm:scale-100 scale-75">
+        flex flex-col justify-between group">
           <div class=" 
           w-64 h-56 mx-auto bg-[url('/images/Quizer.png')] bg-cover
           bg-no-repeat bg-center
           rounded-tr-3xl rounded-bl-3xl rounded-tl-lg rounded-br-lg
           group-hover:ring-4 border-2 border-slate-600"></div>
-          <h1 class="text-xl font-medium 
-          underline underline-offset-4 decoration-secondary-300
-          decoration-4">Quizer</h1>
+          <h1 class="text-xl font-medium">Quizer</h1>
           <p class="text-lg">From the name itself, it is a quiz app which records your score and displays it in the end.
             It can also detect certain keyboard shortcut combinations related to the subject.
           </p>
@@ -328,32 +444,30 @@ dark:bg-black dark:text-white/90 transition-all
 
       <a href="https://Tailwind-Editor.danielbenedictb.repl.co" target="_blank">
       <div class="
-      sm:w-80 w-72 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+      w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
       border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
       shadow-lg shadow-primary-400/90
       transition-all hover:scale-110 duration-150 hover:ring-8
       dark:bg-slate-800 dark:ring-primary-400/90
-      flex flex-col justify-between group sm:scale-100 scale-75">
+      flex flex-col justify-between group">
         <div class=" 
         w-64 h-56 mx-auto bg-[url('/images/tailwindEditor.png')] bg-cover
         bg-no-repeat bg-center
         rounded-tr-3xl rounded-bl-3xl rounded-tl-lg rounded-br-lg
         group-hover:ring-4 border-2 border-slate-600"></div>
-          <h1 class="text-xl font-medium
-          underline underline-offset-4 decoration-secondary-300
-          decoration-4">Tailwind Editor</h1>
+          <h1 class="text-xl font-medium">Tailwind Editor</h1>
           <p class="text-lg">Tailwind Editor lets you code HTML with TailwindCSS autocomplete and immediately see the results on the Live View section.
           </p>
         </div>
       </a>
 
       <div class="
-      sm:w-80 w-72 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
+      w-80 h-[30rem] text-center flex flex-col justify-start p-5 space-y-4
       border-2 border-slate-600 rounded-lg bg-primary-100/50 backdrop-blur-sm
       shadow-lg shadow-primary-400/90
       transition-all hover:scale-110 duration-150 hover:ring-8
       dark:bg-slate-800 dark:ring-primary-400/90
-      flex flex-col justify-between group sm:scale-100 scale-75">
+      flex flex-col justify-between group">
       <div class=" 
       w-64 h-56 mx-auto bg-[url('/images/Portfolio.png')] bg-cover
       bg-no-repeat bg-center
@@ -367,23 +481,90 @@ dark:bg-black dark:text-white/90 transition-all
       </div>
 
 
-    </div>   
-    
+    </div>
+
+
     <div id="projects" class="w-full h-48 text-center sm:text-4xl text-2xl font-sans font-medium
     grid place-items-center">
       <h2 class="bg-secondary-100/80 p-8
       fancyBorder">CONTACT</h2>
-    </div>  
-    
+    </div>
+
     <!-- CONTACT -->
     <div id="contact" class="
   max-w-screen-2xl
-  flex py-28 flex-col place-items-center sm:px-8 px-4 gap-y-16 font-sans 
+  flex py-28 flex-col place-items-center px-8 gap-y-16 font-sans 
   ">
-      <p class="max-w-prose text-2xl text-center font-medium px-4">Like what you see? Feel free to contact me through the channels below.</p>
+
+      <p class="max-w-prose text-2xl text-center font-medium">Like what you see? Feel free to contact me through the channels below.</p>
+
+        <!-- CONTACT FORM - PENDING -->
+      <!-- <div class="
+      max-w-prose h-fit rounded-md border-2 border-black text-lg
+      bg-primary-100/60 backdrop-blur-sm
+      transition-all duration-150 hover:ring-8
+      dark:bg-slate-800 dark:ring-primary-400/90
+      shadow-lg shadow-primary-400/90">
+        <form
+          class="
+        grid grid-cols-2 grid-rows-[30px_50px_30px_50px_30px_150px_50px] grid-flow-row gap-y-4 gap-x-2 pb-8 pt-4 px-10">
+          <label for="firstName" class="font-medium row-start-1 row-end-2 col-start-1 col-span-1 self-center">First
+            Name:</label>
+          <input id="firstName" type="text" placeholder="John" class="
+          border-2 border-black rounded-md
+          row-start-2 row-end-2 col-start-1 col-span-1 pl-3 
+          placeholder:italic placeholder:text-secondary-100 placeholder:font-medium
+          caret-secondary-100
+          bg-primary-300/25 
+          focus:bg-white/80 focus:ring-2 focus:ring-4 focus:ring-offset-2 focus:ring-secondary-200
+          dark:placeholder:text-white dark:focus:text-black dark:focus:placeholder:text-secondary-100
+          ">
+          <label for="lastName" class="font-medium row-start-1 row-end-2 col-start-2 col-span-1 self-center">Last
+            Name:</label>
+          <input id="lastName" type="text" placeholder="Doe" class="
+          border-2 border-black rounded-md
+          row-start-2 row-end-2 col-start-2 col-span-1 pl-3 
+          placeholder:italic placeholder:text-secondary-100 placeholder:font-medium
+          caret-secondary-100
+          bg-primary-300/25 
+          focus:bg-white/80 focus:ring-2 focus:ring-4 focus:ring-offset-2 focus:ring-secondary-200
+          dark:placeholder:text-white dark:focus:text-black dark:focus:placeholder:text-secondary-100
+          ">
+          <label for="workEmail" class="font-medium row-start-3 row-end-3 col-start-1 col-span-2 self-center">Work
+            Email:</label>
+          <input id="workEmail" type="email" placeholder="JohnDoe@gmail.com" class="
+          border-2 border-black rounded-md
+          row-start-4 row-end-4 col-start-1 col-span-2 pl-3 
+          placeholder:italic placeholder:text-secondary-100 placeholder:font-medium
+          caret-secondary-100
+          bg-primary-300/25 
+          focus:bg-white/80 focus:ring-2 focus:ring-4 focus:ring-offset-2 focus:ring-secondary-200
+          dark:placeholder:text-white dark:focus:text-black dark:focus:placeholder:text-secondary-100
+          ">
+          <label for="message"
+            class="font-medium row-start-5 row-span-1 col-start-1 col-span-2 self-center">Message:</label>
+          <textarea id="message" placeholder="Place a small message here, and I'll contact you as soon as I can." class="
+          border-2 border-black rounded-md
+          row-start-6 row-end-6 col-start-1 col-span-2 p-5 
+          placeholder:italic placeholder:text-secondary-100 placeholder:font-medium
+          caret-secondary-100
+          bg-primary-300/25
+          focus:bg-white/80 focus:ring-2 focus:ring-4 focus:ring-offset-2 focus:ring-secondary-200
+          dark:placeholder:text-white dark:focus:text-black dark:focus:placeholder:text-secondary-100
+          resize-none
+          "></textarea>
+
+          <button type="submit" class="
+          transition-all
+          border-2 border-black rounded-md
+          col-span-2 row-start-7 text-2xl font-semibold hover:tracking-widest
+          bg-accent-200/80 hover:bg-accent-100/80 active:bg-accent-300
+          text-black">SUBMIT</button>
+        </form>
+      </div> -->
 
       <ul class="
-      sm:w-96 w-64 text-center space-y-12 mt-5">
+      w-96 text-center space-y-12 mt-5">
         <li class="group">
           <a href="https://github.com/dbomoto" target="_blank" class="relative">
             <i class="fa-brands fa-github text-5xl group-hover:-translate-y-12 transition-all
@@ -401,16 +582,16 @@ dark:bg-black dark:text-white/90 transition-all
           </a>
         </li>
         <li class="group">
-          <a href="https://www.linkedin.com/in/daniel-benedict-omoto-04a232206/" target="_blank" class="relative">
+          <a href="https://www.example.com" target="_blank" class="relative">
             <i class="fa-brands fa-linkedin-in text-5xl group-hover:-translate-y-12 transition-all
             group-hover:text-secondary-300 duration-200"></i>
             <p class="text-xl opacity-0 -translate-y-10
-            group-hover:opacity-100 transition-all duration-200">https://www.linkedin.com/in/daniel-benedict-omoto-04a232206/</p>
+            group-hover:opacity-100 transition-all duration-200">https://www.example.com</p>
           </a>
         </li>
       </ul>
-    </div>  
-    
+    </div>
+
     <!-- FOOTER -->
     <div class="w-full
   flex flex-col text-center place-items-center py-20 space-y-5 px-5 font-mono
@@ -429,46 +610,47 @@ dark:bg-black dark:text-white/90 transition-all
 
     </div>
 
+
     <!-- ACCESIBILITY -->
     <div class="fixed right-0 bottom-0 mr-5 mb-5 space-y-4 z-10 transition-all font-mono">
-        <a href="#home" class="grid place-items-center h-8 w-8">
-          <i class="fa-solid fa-arrow-up text-xl
-          hover:scale-125 peer"></i>
-          <p class="absolute right-10 invisible peer-hover:visible whitespace-nowrap">
-            Go up</p>
-        </a>
-        <div data-darkmode="no" class="grid place-items-center h-8 w-8 group">
-          <i class="fa-solid fa-moon text-xl
-          group-hover:scale-125"></i>
-          <p class="absolute right-10 invisible group-hover:visible whitespace-nowrap">
-            Dark Mode</p>
-        </div>
-        <div data-darkmode="yes" class="h-8 w-8 hidden relative group">
-          <i class="fa-solid fa-sun text-xl
-          group-hover:scale-125 absolute left-1.5 top-0.5"></i>
-          <p class="absolute right-10 top-0.5 invisible group-hover:visible whitespace-nowrap">
-            Light Mode</p>
-        </div>
-        <div data-reducemotion="no" class="grid place-items-center h-8 w-8 relative group">
-          <i class="fa-solid fa-gauge-simple 
-          group-hover:scale-125 text-xl"></i>
-          <p class="absolute right-10 top-26 invisible group-hover:visible whitespace-nowrap">
-            Reduce Motion</p>
-        </div>
-        <div data-reducemotion="yes" class="h-8 w-8 hidden group relative group">
-          <i class="fa-solid fa-gauge-simple-high  text-xl 
-          group-hover:scale-125 absolute left-1.5"></i>
-          <p class="absolute right-10 top-0.5 invisible group-hover:visible whitespace-nowrap">
-            Increase Motion</p>
-        </div>
-        <a href="https://github.com/dbomoto/dbomoto.github.io" target="_blank" class="grid place-items-center h-8 w-8">
-          <i class="fa-brands fa-github text-xl
-          hover:scale-125 peer"></i>
-          <p class="absolute right-10 invisible peer-hover:visible whitespace-nowrap">
-            Code for this project</p>
-        </a>      
-      </div>    
-    
+      <a href="#home" class="grid place-items-center h-8 w-8">
+        <i class="fa-solid fa-arrow-up text-xl
+        hover:scale-125 peer"></i>
+        <p class="absolute right-10 invisible peer-hover:visible whitespace-nowrap">
+          Go up</p>
+      </a>
+      <div data-darkmode="no" class="grid place-items-center h-8 w-8 group">
+        <i class="fa-solid fa-moon text-xl
+        group-hover:scale-125"></i>
+        <p class="absolute right-10 invisible group-hover:visible whitespace-nowrap">
+          Dark Mode</p>
+      </div>
+      <div data-darkmode="yes" class="h-8 w-8 hidden relative group">
+        <i class="fa-solid fa-sun text-xl
+        group-hover:scale-125 absolute left-1.5 top-0.5"></i>
+        <p class="absolute right-10 top-0.5 invisible group-hover:visible whitespace-nowrap">
+          Light Mode</p>
+      </div>
+      <div data-reducemotion="no" class="grid place-items-center h-8 w-8 relative group">
+        <i class="fa-solid fa-gauge-simple 
+        group-hover:scale-125 text-xl"></i>
+        <p class="absolute right-10 top-26 invisible group-hover:visible whitespace-nowrap">
+          Reduce Motion</p>
+      </div>
+      <div data-reducemotion="yes" class="h-8 w-8 hidden group relative group">
+        <i class="fa-solid fa-gauge-simple-high  text-xl 
+        group-hover:scale-125 absolute left-1.5"></i>
+        <p class="absolute right-10 top-0.5 invisible group-hover:visible whitespace-nowrap">
+          Increase Motion</p>
+      </div>
+      <a href="https://github.com/dbomoto/dbomoto.github.io" target="_blank" class="grid place-items-center h-8 w-8">
+        <i class="fa-brands fa-github text-xl
+        hover:scale-125 peer"></i>
+        <p class="absolute right-10 invisible peer-hover:visible whitespace-nowrap">
+          Code for this project</p>
+      </a>      
+    </div>
+
   </div>
 
   <!-- JQUERY -->

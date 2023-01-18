@@ -100,43 +100,44 @@ $(document).ready(function(){
             },
             duration: 1500,
             easing: "easeOutElastic(2,1)",
-            complete: fancyBorders
+            // "complete" keeps on looping the animation with new values
+            // complete: fancyBorders 
         })
     }
     // ring animation
-    anime({
-        targets: "#ringAnimation",
-        autoplay: true,
-        loop: true,
-        direction: 'alternate',
-        scale: [1,1.2],
-        rotate: 50,
-        easing: 'linear',
-        // scale: [
-        //     {
-        //     value: 1,
-        //     direction: "alternate",
-        //     easing: 'linear',
-        //     duration: 1000,
-        //     },
-        //     {
-        //     value: 1.2,
-        //     direction: "alternate",
-        //     easing: 'linear',
-        //     duration: 1000
-        //     }
-        // ],
-        // keyframes: [
-        //     {scale: 1.1},
-        //     {scale: 1},
-        // ],
-        // rotate: {
-        //     value: '360deg',
-        //     duration: 20000,
-        //     direction: 'normal',
-        //     easing: 'linear',
-        // }
-    })
+    // anime({
+    //     targets: "#ringAnimation",
+    //     autoplay: true,
+    //     loop: true,
+    //     direction: 'alternate',
+    //     scale: [1,1.2],
+    //     rotate: 50,
+    //     easing: 'linear',
+    //     // scale: [
+    //     //     {
+    //     //     value: 1,
+    //     //     direction: "alternate",
+    //     //     easing: 'linear',
+    //     //     duration: 1000,
+    //     //     },
+    //     //     {
+    //     //     value: 1.2,
+    //     //     direction: "alternate",
+    //     //     easing: 'linear',
+    //     //     duration: 1000
+    //     //     }
+    //     // ],
+    //     // keyframes: [
+    //     //     {scale: 1.1},
+    //     //     {scale: 1},
+    //     // ],
+    //     // rotate: {
+    //     //     value: '360deg',
+    //     //     duration: 20000,
+    //     //     direction: 'normal',
+    //     //     easing: 'linear',
+    //     // }
+    // })
 
     // ANIMATION TRIGGERS
     fancyBorders();
